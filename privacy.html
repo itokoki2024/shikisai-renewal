@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>プライバシーポリシー | 株式会社SHiKiSAi</title>
+    <meta
+      name="description"
+      content="株式会社SHiKiSAiのプライバシーポリシー。個人情報の収集・利用・管理方針についてご説明します。"
+    />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/inner.css" />
+    <link rel="stylesheet" href="css/about.css" />
+    <style>
+      /* ── Privacy Page Layout ── */
+      .privacy-hero {
+        background: var(--color-bg);
+        color: var(--color-white);
+        padding: calc(var(--header-height) + 64px) 0 56px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .privacy-hero__eyebrow {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--color-accent);
+        margin-bottom: 16px;
+      }
+
+      .privacy-hero__title {
+        font-size: clamp(28px, 4vw, 48px);
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        line-height: 1.15;
+        text-wrap: balance;
+      }
+
+      .privacy-hero__updated {
+        margin-top: 20px;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.4);
+      }
+
+      /* ── Document Body ── */
+      .privacy-body {
+        background: var(--color-light);
+        padding: clamp(64px, 8vw, 100px) 0 clamp(80px, 10vw, 120px);
+      }
+
+      .privacy-doc {
+        max-width: 760px;
+        margin: 0 auto;
+      }
+
+      .privacy-lead {
+        font-size: 15px;
+        line-height: 2;
+        color: #3d4452;
+        margin-bottom: 56px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid var(--color-border-dark);
+      }
+
+      .privacy-section {
+        margin-bottom: 48px;
+        padding-bottom: 48px;
+        border-bottom: 1px solid var(--color-border-dark);
+      }
+
+      .privacy-section:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .privacy-section__num {
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--color-accent);
+        margin-bottom: 10px;
+      }
+
+      .privacy-section__title {
+        font-size: clamp(17px, 2vw, 21px);
+        font-weight: 700;
+        color: var(--color-text);
+        letter-spacing: -0.01em;
+        line-height: 1.4;
+        margin-bottom: 20px;
+        text-wrap: balance;
+      }
+
+      .privacy-section__text {
+        font-size: 15px;
+        line-height: 2;
+        color: #3d4452;
+      }
+
+      .privacy-section__text + .privacy-section__text {
+        margin-top: 14px;
+      }
+
+      .privacy-list {
+        margin: 16px 0 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .privacy-list li {
+        font-size: 15px;
+        line-height: 1.8;
+        color: #3d4452;
+        padding-left: 20px;
+        position: relative;
+      }
+
+      .privacy-list li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0.7em;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--color-accent);
+        opacity: 0.7;
+      }
+
+      /* ── Contact Box ── */
+      .privacy-contact-box {
+        margin-top: 24px;
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        border-radius: var(--radius-md);
+        padding: 28px 32px;
+      }
+
+      .privacy-contact-box dl {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        gap: 10px 20px;
+      }
+
+      .privacy-contact-box dt {
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--color-accent);
+        letter-spacing: 0.04em;
+        padding-top: 2px;
+      }
+
+      .privacy-contact-box dd {
+        font-size: 14px;
+        line-height: 1.7;
+        color: #3d4452;
+      }
+
+      .privacy-contact-box dd a {
+        color: var(--color-accent);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      /* ── Back Link ── */
+      .privacy-back {
+        margin-top: 64px;
+        text-align: center;
+      }
+
+      .privacy-back a {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--color-text-soft);
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      .privacy-back a:hover {
+        color: var(--color-accent);
+      }
+
+      .privacy-back svg {
+        width: 16px;
+        height: 16px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      @media (max-width: 767px) {
+        .privacy-contact-box dl {
+          grid-template-columns: 1fr;
+          gap: 4px;
+        }
+
+        .privacy-contact-box {
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ページ固定背景レイヤー -->
+    <div id="about-bg" aria-hidden="true">
+      <div class="about-bg__glow"></div>
+      <div class="about-bg__noise"></div>
+    </div>
+
+    <header class="site-header" id="siteHeader">
+      <div class="container header-inner">
+        <a href="index.html" class="site-logo" aria-label="SHiKiSAi トップへ">
+          <img src="assets/img/logo.png" alt="SHiKiSAi ロゴ" class="site-logo-image" />
+          <span class="site-logo-label">SHiKiSAi</span>
+        </a>
+        <nav class="pc-nav" aria-label="グローバルナビゲーション">
+          <ul class="pc-nav-list">
+            <li><a href="news.html">News</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="service.html">Service</a></li>
+            <li><a href="recruit.html">Recruit</a></li>
+            <li><a href="contact.html" class="nav-contact">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="menu-button" id="menuButton" aria-label="メニューを開く" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay" aria-hidden="true"></div>
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-menu-inner">
+        <button class="mobile-menu-close" id="mobileMenuClose" aria-label="メニューを閉じる">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+            <line x1="4" y1="4" x2="20" y2="20" /><line x1="20" y1="4" x2="4" y2="20" />
+          </svg>
+        </button>
+        <nav aria-label="モバイルナビゲーション">
+          <ul class="mobile-menu-list">
+            <li><a href="news.html">News</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="service.html">Service</a></li>
+            <li><a href="recruit.html">Recruit</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <main>
+      <!-- Hero -->
+      <div class="privacy-hero">
+        <div class="container">
+          <p class="privacy-hero__eyebrow">Legal</p>
+          <h1 class="privacy-hero__title">プライバシーポリシー</h1>
+          <p class="privacy-hero__updated">最終更新日：2025年1月</p>
+        </div>
+      </div>
+
+      <!-- Document -->
+      <section class="privacy-body">
+        <div class="container">
+          <div class="privacy-doc">
+
+            <p class="privacy-lead">
+              株式会社SHiKiSAi（以下、「当社」といいます。）は、本ウェブサイト（<a href="https://shikisai07.studio.site/1" target="_blank" rel="noopener noreferrer" style="color:var(--color-accent);text-underline-offset:3px;text-decoration:underline;">https://shikisai07.studio.site/1</a>）（以下、「本サイト」といいます。）において提供するサービスにおける、ユーザーの個人情報の取扱いについて、以下のとおりプライバシーポリシー（以下、「本ポリシー」といいます。）を定めます。
+            </p>
+
+            <div class="privacy-section">
+              <span class="privacy-section__num">Article 1</span>
+              <h2 class="privacy-section__title">個人情報の定義</h2>
+              <p class="privacy-section__text">
+                本ポリシーにおいて「個人情報」とは、個人情報保護法にいう「個人情報」を指すものとし、生存する個人に関する情報であって、当該情報に含まれる氏名、生年月日、住所、電話番号、連絡先その他の記述等により特定の個人を識別できる情報を指します。
+              </p>
+            </div>
+
+            <div class="privacy-section">
+              <span class="privacy-section__num">Article 2</span>
+              <h2 class="privacy-section__title">個人情報の収集方法</h2>
+              <p class="privacy-section__text">
+                当社は、ユーザーが本サイトのお問い合わせフォーム等を利用される際に、氏名、会社名、電話番号、メールアドレスなどの個人情報をお尋ねすることがあります。
+              </p>
+            </div>
+
+            <div class="privacy-section">
+              <span class="privacy-section__num">Article 3</span>
+              <h2 class="privacy-section__title">個人情報を収集・利用する目的</h2>
+              <p class="privacy-section__text">当社が個人情報を収集・利用する目的は、以下のとおりです。</p>
+              <ul class="privacy-list">
+                <li>当社サービスの提供・運営のため</li>
+                <li>ユーザーからのお問い合わせに回答するため（本人確認を行うことを含む）</li>
+                <li>ユーザーが利用中のサービスの更新情報、イベント、キャンペーン等および当社が提供する他のサービスの案内のメールを送付するため</li>
+                <li>メンテナンス、重要なお知らせなど必要に応じたご連絡のため</li>
+                <li>上記の利用目的に付随する目的</li>
+              </ul>
+            </div>
+
+            <div class="privacy-section">
+              <span class="privacy-section__num">Article 4</span>
+              <h2 class="privacy-section__title">利用目的の変更</h2>
+              <ul class="privacy-list">
+                <li>当社は、利用目的が変更前と関連性を有すると合理的に認められる場合に限り、個人情報の利用目的を変更するものとします。</li>
+                <li>利用目的の変更を行った場合には、変更後の目的について、当社所定の方法によりユーザーに通知し、または本サイト上に公表するものとします。</li>
+              </ul>
+            </div>
+
+            <div class="privacy-section">
+              <span class="privacy-section__num">Article 5</span>
+              <h2 class="privacy-section__title">個人情報の第三者提供</h2>
+              <p class="privacy-section__text">
+                当社は、次に掲げる場合を除いて、あらかじめユーザーの同意を得ることなく、第三者に個人情報を提供することはありません。ただし、個人情報保護法その他の法令で認められる場合を除きます。
+              </p>
+              <ul class="privacy-list">
+                <li>人の生命、身体または財産の保護のために必要がある場合であって、本人の同意を得ることが困難であるとき</li>
+                <li>公衆衛生の向上または児童の健全な育成の推進のために特に必要がある場合であって、本人の同意を得ることが困難であるとき</li>
+                <li>国の機関若しくは地方公共団体またはその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合であって、本人の同意を得ることにより当該事務の遂行に支障を及ぼすおそれがあるとき</li>
+              </ul>
+            </div>
+
+            <div class="privacy-section">
+              <span class="privacy-section__num">Article 6</span>
+              <h2 class="privacy-section__title">個人情報の開示・訂正・利用停止等</h2>
+              <p class="privacy-section__text">
+                ユーザー本人から個人情報の開示、訂正、追加、削除、利用の停止、または消去を求められたときは、法令に基づき、本人確認を行った上で速やかに対応いたします。具体的な手続きにつきましては、下記のお問い合わせ窓口までご連絡ください。
+              </p>
+            </div>
+
+            <div class="privacy-section">
+              <span class="privacy-section__num">Article 7</span>
+              <h2 class="privacy-section__title">クッキー（Cookie）およびアクセス解析ツールの利用について</h2>
+              <p class="privacy-section__text">
+                本サイトでは、サイトの分析と改善のためにGoogleアナリティクスなどのアクセス解析ツールを使用しています。このツールはトラフィックデータの収集のためにクッキー（Cookie）を使用しています。トラフィックデータは匿名で収集されており、個人を特定するものではありません。
+              </p>
+              <p class="privacy-section__text">
+                ユーザーはブラウザの設定でクッキーを無効にすることにより、このデータ収集を拒否することができます。
+              </p>
+            </div>
+
+            <div class="privacy-section">
+              <span class="privacy-section__num">Article 8</span>
+              <h2 class="privacy-section__title">プライバシーポリシーの変更</h2>
+              <ul class="privacy-list">
+                <li>本ポリシーの内容は、ユーザーに通知することなく、変更することができるものとします。</li>
+                <li>当社が別途定める場合を除いて、変更後のプライバシーポリシーは、本サイトに掲載したときから効力を生じるものとします。</li>
+              </ul>
+            </div>
+
+            <div class="privacy-section">
+              <span class="privacy-section__num">Article 9</span>
+              <h2 class="privacy-section__title">お問い合わせ窓口</h2>
+              <p class="privacy-section__text">本ポリシーに関するお問い合わせ、および個人情報の取扱いに関するご相談は、下記までご連絡ください。</p>
+              <div class="privacy-contact-box">
+                <dl>
+                  <dt>社名</dt>
+                  <dd>株式会社SHiKiSAi</dd>
+                  <dt>住所</dt>
+                  <dd>〒460-0022 愛知県名古屋市中区金山1-14-9 長谷川ビル5F</dd>
+                  <dt>代表者名</dt>
+                  <dd>田口潤哉</dd>
+                  <dt>お問い合わせ</dt>
+                  <dd><a href="contact.html">お問い合わせフォームはこちら</a></dd>
+                </dl>
+              </div>
+            </div>
+
+            <div class="privacy-back">
+              <a href="index.html">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <line x1="19" y1="12" x2="5" y2="12" />
+                  <polyline points="12,19 5,12 12,5" />
+                </svg>
+                トップページへ戻る
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="site-logo footer-logo" aria-label="SHiKiSAi トップへ">
+            <img src="assets/img/logo.png" alt="SHiKiSAi ロゴ" class="site-logo-image" />
+            <span class="site-logo-label">SHiKiSAi</span>
+          </a>
+          <p class="footer-tagline">彩りある人生を、<br />働く環境づくりから支える。</p>
+        </div>
+        <nav class="footer-nav-wrap" aria-label="フッターナビゲーション">
+          <div class="footer-nav-col">
+            <div class="footer-nav-item"><a href="about.html"><strong class="footer-nav__en">About</strong><span class="footer-nav__ja">SHiKiSAiについて</span></a></div>
+            <div class="footer-nav-item"><a href="service.html"><strong class="footer-nav__en">Service</strong><span class="footer-nav__ja">サービス内容</span></a></div>
+          </div>
+          <div class="footer-nav-col">
+            <div class="footer-nav-item"><a href="news.html"><strong class="footer-nav__en">News</strong><span class="footer-nav__ja">ニュース</span></a></div>
+            <div class="footer-nav-item"><a href="recruit.html"><strong class="footer-nav__en">Recruit</strong><span class="footer-nav__ja">採用情報</span></a></div>
+            <div class="footer-nav-item"><a href="contact.html"><strong class="footer-nav__en">Contact</strong><span class="footer-nav__ja">お問い合わせ</span></a></div>
+            <div class="footer-nav-item footer-nav-item--privacy"><a href="privacy.html" class="footer-nav__privacy">→ Privacy Policy</a></div>
+          </div>
+        </nav>
+      </div>
+      <div class="container footer-bottom">
+        <div class="footer-bottom__address">
+          <p>株式会社SHiKiSAi</p>
+          <p>〒460-0022 愛知県名古屋市中区金山1-14-9 長谷川ビル5F</p>
+        </div>
+        <p class="footer-bottom__copy">COPYRIGHT © SHiKiSAi ALL RIGHT RESERVED.</p>
+      </div>
+      <a href="#top" class="footer-page-top" aria-label="ページトップへ">
+        Page Top
+        <svg viewBox="0 0 14 20" aria-hidden="true"><line x1="7" y1="18" x2="7" y2="2"/><polyline points="2,7 7,2 12,7"/></svg>
+      </a>
+    </footer>
+
+    <button id="scrollTopBtn" class="scroll-top-btn" aria-label="ページトップへ戻る">
+      <svg viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5,12 12,5 19,12"/></svg>
+    </button>
+    <script src="js/main.js"></script>
+  </body>
+</html>
