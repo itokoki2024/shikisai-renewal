@@ -23,10 +23,17 @@
   --radius-sm: 12px;
   --container: 1200px;
   --header-height: 84px;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.32, 0.72, 0, 1);
   --ease:
-    transform 0.35s ease, opacity 0.35s ease, background 0.35s ease,
-    border-color 0.35s ease, box-shadow 0.35s ease, top 0.35s ease,
-    backdrop-filter 0.35s ease, visibility 0.35s ease;
+    transform 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+    top 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+    backdrop-filter 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0.32s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 *,
@@ -45,7 +52,7 @@ body {
   overflow-x: clip;
   color: var(--color-text);
   background: var(--color-white);
-  font-family: "Inter", "Zen Kaku Gothic New", sans-serif;
+  font-family: "Plus Jakarta Sans", "Zen Kaku Gothic New", sans-serif;
   font-size: 16px;
   line-height: 1.85;
   -webkit-font-smoothing: antialiased;
@@ -201,13 +208,20 @@ section {
   transform: translateY(-2px);
 }
 
+.btn:active {
+  transform: translateY(0) scale(0.97);
+  transition: transform 0.12s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 .btn-primary {
   color: var(--color-bg);
   background: var(--color-accent);
+  box-shadow: 0 4px 20px rgba(0, 195, 0, 0.28);
 }
 
 .btn-primary:hover {
   background: #17d917;
+  box-shadow: 0 8px 32px rgba(0, 195, 0, 0.4);
 }
 
 .btn-secondary {
@@ -218,15 +232,22 @@ section {
 
 .btn-secondary:hover {
   background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 .btn-dark {
   color: var(--color-white);
   background: var(--color-bg);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.24);
 }
 
 .btn-dark:hover {
   background: #1a2128;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.32);
+}
+
+.btn-outline-dark {
+  box-shadow: none;
 }
 
 /* =========================
@@ -783,7 +804,7 @@ section {
 .site-logo-label {
   display: inline-block;
   color: var(--color-white);
-  font-family: "Inter", "Zen Kaku Gothic New", sans-serif;
+  font-family: "Plus Jakarta Sans", "Zen Kaku Gothic New", sans-serif;
   font-size: 20px;
   font-weight: 800;
   letter-spacing: 0.02em;

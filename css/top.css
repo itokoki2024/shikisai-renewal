@@ -73,10 +73,7 @@
   line-height: 1.05;
   letter-spacing: -0.04em;
   font-weight: 800;
-  background: linear-gradient(150deg, #ffffff 40%, rgba(255, 255, 255, 0.72) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #ffffff;
 }
 
 
@@ -489,8 +486,11 @@
 /* ホバー（表示後のみ）*/
 .svc-grid.is-visible .svc-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(0, 195, 0, 0.28);
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.38);
+  border-color: rgba(0, 195, 0, 0.32);
+  box-shadow:
+    0 24px 48px rgba(0, 0, 0, 0.36),
+    0 0 0 1px rgba(0, 195, 0, 0.12),
+    0 8px 32px rgba(0, 195, 0, 0.08);
 }
 
 /* 画像 */
@@ -759,14 +759,18 @@
   padding: 26px 24px 24px;
   border-radius: var(--radius-lg);
   background: #ffffff;
-  border: 1px solid rgba(16, 19, 23, 0.08);
-  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(16, 19, 23, 0.07);
+  box-shadow: 0 4px 24px rgba(16, 19, 23, 0.06);
   overflow: hidden;
   transition: var(--ease);
 }
 
 .stat-card:hover {
   transform: translateY(-4px);
+  border-color: rgba(0, 195, 0, 0.2);
+  box-shadow:
+    0 12px 40px rgba(16, 19, 23, 0.1),
+    0 0 0 1px rgba(0, 195, 0, 0.08);
 }
 
 .stat-card-icon {
@@ -808,12 +812,8 @@
 
 .stat-card-value span {
   font-size: clamp(38px, 3.6vw, 60px);
-  background: linear-gradient(to bottom, #ffb347 0%, #ff8a00 50%, #ff5a00 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: #f59e0b;
   font-variant-numeric: tabular-nums;
-  -webkit-text-fill-color: transparent;
 }
 
 .stat-card-value small {
@@ -2556,7 +2556,7 @@ body.is-loaded .page-shell {
   position: relative;
   display: block;
   overflow: hidden;
-  font-family: "Inter", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: clamp(32px, 6vw, 72px);
   font-weight: 900;
   line-height: 0.88;

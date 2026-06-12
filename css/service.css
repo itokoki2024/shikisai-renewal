@@ -27,7 +27,7 @@
   top: 50%;
   right: 0;
   transform: translateY(-50%);
-  font-family: "Inter", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: clamp(100px, 18vw, 260px);
   font-weight: 900;
   line-height: 1;
@@ -215,7 +215,7 @@
   top: 50%;
   right: 0;
   transform: translateY(-50%);
-  font-family: "Inter", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: clamp(100px, 18vw, 260px);
   font-weight: 900;
   line-height: 1;
@@ -925,7 +925,7 @@
 }
 
 .svc-list__num {
-  font-family: "Inter", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: clamp(28px, 3.5vw, 44px);
   font-weight: 800;
   color: var(--color-accent);
@@ -1010,7 +1010,7 @@
 }
 
 .svc-card__num {
-  font-family: "Inter", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -2249,7 +2249,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Inter", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 17px;
   font-weight: 800;
   color: var(--color-accent);
@@ -2330,7 +2330,7 @@
   color: var(--color-accent);
   letter-spacing: 0.04em;
   margin-top: 1px;
-  font-family: "Inter", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .svc-faq-item__icon {

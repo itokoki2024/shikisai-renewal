@@ -31,7 +31,7 @@
   top: 50%;
   right: 0;
   transform: translateY(-50%);
-  font-family: "Inter", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: clamp(100px, 18vw, 260px);
   font-weight: 900;
   line-height: 1;
@@ -582,7 +582,7 @@
 
 
 .value-item__num {
-  font-family: "Inter", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 28px;
   font-weight: 800;
   color: var(--color-accent);
