@@ -1,0 +1,821 @@
+/* ================================================================
+   COMPANY PAGE — company.css
+   about.css / inner.css を継承し、会社概要ページ固有スタイルを定義
+================================================================ */
+
+/* ────────────────────────────────────────────────────────────
+   0. WHO WE ARE + 代表メッセージ 共通ラッパー
+──────────────────────────────────────────────────────────── */
+.cmp-identity-group {
+  position: relative;
+  overflow: clip; /* scroll containerを作らずクリップ → bg-visualのtransformがlayout幅を広げない */
+  background: #F4F5F7; /* company-band と同色で明示指定 */
+}
+
+/* about-identity — 背景・シャドウ・グローをリセットして cmp-mv と統一 */
+.cmp-identity-group .about-identity {
+  background: transparent;
+  box-shadow: none;
+}
+
+/* 方眼紙グリッド装飾を非表示 */
+.cmp-identity-group .about-identity::before {
+  display: none;
+}
+
+/* 右上アンビエントグロー（背景色の差に見えるため）を非表示 */
+.cmp-identity-group .about-identity::after {
+  display: none;
+}
+
+/* 代表メッセージ内のダークバンドも透過 */
+.cmp-identity-group .dark-sections-band-zone {
+  background: transparent;
+}
+
+/* 共有オービット背景 — 右端を中心点として大きく表示 */
+.cmp-identity-group__bg-visual {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: min(82%, 780px);
+  aspect-ratio: 1 / 1;
+  transform: translateX(50%) translateY(-50%);
+  pointer-events: none;
+  opacity: 0;
+  z-index: 0;
+  animation: cmp-orbit-appear 2s ease-out 0.4s both;
+}
+
+.cmp-identity-group__bg-visual .identity-orbit {
+  max-width: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+.cmp-identity-group__bg-visual .identity-orbit__core {
+  inset: 22%;
+}
+
+.cmp-identity-group__bg-visual .identity-orbit__logo {
+  width: 78%;
+}
+
+@keyframes cmp-orbit-appear {
+  from { opacity: 0; transform: translateX(50%) translateY(-50%) scale(0.94); }
+  to   { opacity: 0.32; transform: translateX(50%) translateY(-50%) scale(1); }
+}
+
+/* コンテンツをオービットより前面に */
+.cmp-identity-group .about-identity .container,
+.cmp-identity-group .cmp-mv .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ────────────────────────────────────────────────────────────
+   1. MISSION / VISION — about.css の about-mv を流用
+──────────────────────────────────────────────────────────── */
+/* ── Company Band: メッセージ〜アクセスを一括ラップ ── */
+.company-band {
+  position: relative;
+  overflow: hidden;
+  background: #F4F5F7; /* 共通背景をバンドで管理 */
+}
+
+/* 内部セクションを透明にしてバンド背景と装飾を透かす */
+.company-band .dark-sections-band-zone {
+  background: transparent;
+}
+.company-band .diag-band-single {
+  display: none; /* ダーク帯は不要 */
+}
+
+/* バンドレベルの works-deco / company-deco を company-band 全体基準で配置 */
+/* z-index: 5 → セクション背景より前面、コンテンツより後面に表示 */
+.company-band > .works-deco {
+  opacity: 0.28;
+  z-index: 5;
+}
+
+.company-band > .company-deco {
+  opacity: 0.28;
+  z-index: 5;
+}
+
+/* セクションのコンテンツをデコより前面に（デコが文字を隠さないよう） */
+.company-band section .container {
+  position: relative;
+  z-index: 6;
+}
+
+/* about-member の背景を透過してバンド背景を透かす */
+.company-band .about-member {
+  background: transparent;
+}
+
+/* company-deco リング位置: Member〜Profile付近（バンド上部から55〜75%）に配置 */
+/* バンド構成: message(0-15%) → mission(15-30%) → values(30-50%) → member(50-65%) → profile(65-80%) → access(80-100%) */
+.company-band > .company-deco .company-deco__ring--a {
+  top: 72%; bottom: auto; left: -22%;
+}
+.company-band > .company-deco .company-deco__ring--b {
+  top: 62%; bottom: auto; left: -10%;
+}
+.company-band > .company-deco .company-deco__ring--c {
+  top: 56%; bottom: auto; left: 4%;
+}
+.company-band > .company-deco .company-deco__ring--d {
+  top: 54%; bottom: auto; right: -14%;
+}
+.company-band > .company-deco .company-deco__ring--e {
+  top: 63%; bottom: auto; right: 6%;
+}
+.company-band > .company-deco .company-deco__ring--f {
+  top: 70%; bottom: auto; right: 36%;
+}
+.company-band > .company-deco .company-deco__dot--1 {
+  top: 67%; bottom: auto; left: 18%;
+}
+.company-band > .company-deco .company-deco__dot--2 {
+  top: 55%; bottom: auto; right: 14%;
+}
+.company-band > .company-deco .company-deco__dot--3 {
+  top: 73%; bottom: auto; right: 40%;
+}
+.company-band > .company-deco .company-deco__diamond--1 {
+  top: 58%; bottom: auto; left: 24%;
+}
+.company-band > .company-deco .company-deco__diamond--2 {
+  top: 75%; bottom: auto; right: 20%;
+}
+.company-band > .company-deco .company-deco__diamond--3 {
+  top: 68%; bottom: auto; left: 52%;
+}
+
+/* リング位置: バンド上部（top%）= メッセージ〜プロフィール付近に集中 */
+.company-band > .works-deco .works-deco__ring--a {
+  top: 2%; bottom: auto; right: -22%;
+}
+.company-band > .works-deco .works-deco__ring--b {
+  top: 10%; bottom: auto; right: -10%;
+}
+.company-band > .works-deco .works-deco__ring--c {
+  top: 20%; bottom: auto; right: 4%;
+}
+.company-band > .works-deco .works-deco__ring--d {
+  top: 6%; bottom: auto; left: -14%;
+}
+.company-band > .works-deco .works-deco__ring--e {
+  top: 5%; bottom: auto; left: 6%;
+}
+.company-band > .works-deco .works-deco__ring--f {
+  top: 30%; bottom: auto; left: 38%;
+}
+
+.cmp-mv {
+  position: relative;
+  overflow: hidden;
+  background: transparent !important; /* バンド背景を透かす */
+}
+
+.cmp-profile {
+  background: transparent !important; /* バンド背景を透かす */
+}
+
+/* 格子線 — 削除（緑がかって見えるため） */
+.cmp-mv::before {
+  display: none;
+}
+
+/* 右上グロー — 削除 */
+.cmp-mv::after {
+  display: none;
+}
+
+.cmp-mv .container {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* section-dark のテキスト色を白背景用に上書き */
+.cmp-mv .section-title {
+  color: var(--color-text) !important;
+}
+
+.cmp-mv .section-heading-hero__front {
+  color: var(--color-accent) !important;
+}
+
+/* 大見出し背景テキスト (data-bg="MESSAGE") を暗色に */
+.cmp-mv .section-heading-hero--dark::before {
+  color: rgba(16, 19, 23, 0.08) !important;
+}
+
+.cmp-mv .eyebrow {
+  color: var(--color-accent);
+}
+
+/* ────────────────────────────────────────────────────────────
+   2. PRESIDENT MESSAGE — 代表メッセージ
+──────────────────────────────────────────────────────────── */
+.cmp-message {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: clamp(56px, 7vw, 96px);
+  align-items: start;
+  margin-top: 64px;
+}
+
+.cmp-message__photo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  position: relative;
+}
+
+
+.cmp-message__photo-inner {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: none;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.18), 0 4px 16px rgba(0, 0, 0, 0.1);
+  background: #e8eaed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cmp-message__img {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.cmp-message__name-block {
+  text-align: center;
+  width: 100%;
+  padding: 22px 0 0;
+  margin-top: 22px;
+  border-top: 1px solid rgba(0, 195, 0, 0.25);
+}
+
+.cmp-message__position {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  opacity: 0.8;
+  margin-bottom: 6px;
+}
+
+.cmp-message__name {
+  font-size: clamp(20px, 2.2vw, 24px);
+  font-weight: 800;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+}
+
+.cmp-message__name-en {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: rgba(0, 0, 0, 0.35);
+  margin-top: 5px;
+}
+
+.cmp-message__body {
+  padding-top: 4px;
+  position: relative;
+}
+
+/* 装飾的な引用符 */
+.cmp-message__body::before {
+  content: '\201C';
+  position: absolute;
+  top: -48px;
+  left: -8px;
+  font-size: 120px;
+  line-height: 1;
+  color: var(--color-accent);
+  opacity: 0.1;
+  font-family: Georgia, 'Times New Roman', serif;
+  pointer-events: none;
+  user-select: none;
+}
+
+.cmp-message__lead {
+  font-size: clamp(20px, 2.4vw, 28px);
+  font-weight: 700;
+  line-height: 1.6;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.cmp-message__text {
+  font-size: clamp(15px, 1.4vw, 16px);
+  line-height: 2;
+  color: var(--color-text-soft);
+  margin-bottom: 20px;
+}
+
+.cmp-message__signature {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  text-align: right;
+}
+
+.cmp-message__signature span {
+  font-size: clamp(15px, 1.5vw, 17px);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+@media (max-width: 960px) {
+  .cmp-message {
+    grid-template-columns: 300px 1fr;
+    gap: clamp(40px, 5vw, 64px);
+  }
+}
+
+@media (max-width: 767px) {
+  .cmp-message {
+    grid-template-columns: 1fr;
+  }
+
+  .cmp-message__photo {
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 20px;
+  }
+
+.cmp-message__photo-inner {
+    width: 150px;
+    flex-shrink: 0;
+  }
+
+  .cmp-message__name-block {
+    text-align: left;
+    border-top: none;
+    padding-top: 0;
+    margin-top: 0;
+  }
+
+  .cmp-message__body::before {
+    font-size: 80px;
+    top: -32px;
+  }
+}
+
+/* ────────────────────────────────────────────────────────────
+   3. COMPANY PROFILE — 会社概要テーブル
+──────────────────────────────────────────────────────────── */
+.cmp-profile {
+  background: #F4F5F7;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.cmp-profile .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Grid: 左に見出し、右にテーブル */
+.cmp-profile__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 56px;
+}
+
+.cmp-profile__table {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--color-border);
+}
+
+.cmp-profile__row {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 32px;
+  padding: clamp(20px, 3vw, 32px) 0;
+  border-bottom: 1px solid var(--color-border);
+  align-items: start;
+  transition: background 0.2s ease;
+}
+
+.cmp-profile__row:hover {
+  background: rgba(0, 195, 0, 0.018);
+}
+
+.cmp-profile__term {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  padding-top: 2px;
+}
+
+.cmp-profile__desc {
+  font-size: clamp(15px, 1.4vw, 16px);
+  line-height: 1.85;
+  color: #3d4452;
+}
+
+/* ── ビジネスパートナーロゴ ── */
+.partner-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px 32px;
+  padding: 4px 0;
+}
+
+.partner-logo {
+  display: flex;
+  align-items: center;
+  opacity: 0.55;
+  transition: opacity 0.2s ease;
+  filter: grayscale(1);
+}
+
+.partner-logo:hover {
+  opacity: 0.9;
+  filter: grayscale(0);
+}
+
+.partner-logo svg {
+  height: 32px;
+  width: auto;
+}
+
+/* ────────────────────────────────────────────────────────────
+   4. ACCESS — アクセスセクション
+──────────────────────────────────────────────────────────── */
+.cmp-access {
+  position: relative;
+  overflow: hidden;
+}
+
+/* 格子線 */
+.cmp-access::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 195, 0, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 195, 0, 0.045) 1px, transparent 1px);
+  background-size: 52px 52px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 左上グロー（繋ぎ目を避け内側に移動） */
+.cmp-access::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: -8%;
+  width: 50%;
+  height: 70%;
+  background: radial-gradient(ellipse, rgba(0, 195, 0, 0.07) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ────────────────────────────────────────────────────────────
+   ACCESS — 背景装飾
+──────────────────────────────────────────────────────────── */
+.cmp-access-deco {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* ── リング ── */
+.cmp-access-deco__ring {
+  position: absolute;
+  border-radius: 50%;
+}
+
+/* 右上: 大リング */
+.cmp-access-deco__ring--a {
+  width: clamp(300px, 40vw, 520px);
+  height: clamp(300px, 40vw, 520px);
+  top: 8%; right: -10%;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* 左下: 中リング */
+.cmp-access-deco__ring--b {
+  width: clamp(180px, 24vw, 320px);
+  height: clamp(180px, 24vw, 320px);
+  bottom: 10%; left: 8%;
+  border: 1px solid rgba(0, 195, 0, 0.18);
+}
+
+/* 中央左: 小リング */
+.cmp-access-deco__ring--c {
+  width: 80px; height: 80px;
+  top: 38%; left: 22%;
+  border: 1.5px solid rgba(0, 195, 0, 0.22);
+}
+
+/* ── 部分アーク ── */
+.cmp-access-deco__arc {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px solid transparent;
+}
+
+/* 右下コーナー */
+.cmp-access-deco__arc--tr {
+  width: clamp(160px, 22vw, 300px);
+  height: clamp(160px, 22vw, 300px);
+  bottom: 10%; right: 12%;
+  border-bottom-color: rgba(0, 195, 0, 0.22);
+  border-right-color: rgba(0, 195, 0, 0.22);
+}
+
+/* 左上コーナー */
+.cmp-access-deco__arc--bl {
+  width: clamp(220px, 30vw, 400px);
+  height: clamp(220px, 30vw, 400px);
+  top: 10%; left: -6%;
+  border-top-color: rgba(255, 255, 255, 0.05);
+  border-left-color: rgba(255, 255, 255, 0.05);
+}
+
+/* ── ドット ── */
+.cmp-access-deco__dot {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.cmp-access-deco__dot--1 {
+  width: 10px; height: 10px;
+  top: 14%; left: 35%;
+  background: rgba(0, 195, 0, 0.45);
+}
+
+.cmp-access-deco__dot--2 {
+  width: 6px; height: 6px;
+  top: 58%; right: 24%;
+  background: rgba(0, 195, 0, 0.35);
+}
+
+.cmp-access-deco__dot--3 {
+  width: 5px; height: 5px;
+  bottom: 32%; left: 52%;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.cmp-access-deco__dot--4 {
+  width: 18px; height: 18px;
+  top: 45%; right: 10%;
+  background: transparent;
+  border: 2px solid rgba(0, 195, 0, 0.3);
+}
+
+.cmp-access-deco__dot--5 {
+  width: 8px; height: 8px;
+  bottom: 20%; left: 30%;
+  background: rgba(0, 195, 0, 0.3);
+}
+
+/* ── クロス（+マーク） ── */
+.cmp-access-deco__cross {
+  position: absolute;
+}
+
+.cmp-access-deco__cross::before,
+.cmp-access-deco__cross::after {
+  content: '';
+  position: absolute;
+  border-radius: 1px;
+}
+
+.cmp-access-deco__cross::before { width: 20px; height: 2px; top: 50%; left: 0; transform: translateY(-50%); }
+.cmp-access-deco__cross::after  { width: 2px; height: 20px; top: 0; left: 50%; transform: translateX(-50%); }
+
+.cmp-access-deco__cross--1 {
+  width: 20px; height: 20px;
+  top: 18%; right: 32%;
+}
+.cmp-access-deco__cross--1::before,
+.cmp-access-deco__cross--1::after { background: rgba(0, 195, 0, 0.35); }
+
+.cmp-access-deco__cross--2 {
+  width: 20px; height: 20px;
+  bottom: 25%; left: 16%;
+}
+.cmp-access-deco__cross--2::before,
+.cmp-access-deco__cross--2::after { background: rgba(255, 255, 255, 0.15); }
+
+.cmp-access-deco__cross--3 {
+  width: 14px; height: 14px;
+  top: 62%; left: 44%;
+}
+.cmp-access-deco__cross--3::before { width: 14px; height: 1.5px; }
+.cmp-access-deco__cross--3::after  { width: 1.5px; height: 14px; }
+.cmp-access-deco__cross--3::before,
+.cmp-access-deco__cross--3::after { background: rgba(0, 195, 0, 0.28); }
+
+/* ── ダイヤモンド ── */
+.cmp-access-deco__diamond {
+  position: absolute;
+  transform: rotate(45deg);
+}
+
+.cmp-access-deco__diamond--a {
+  width: clamp(50px, 7vw, 90px);
+  height: clamp(50px, 7vw, 90px);
+  top: 8%; left: 55%;
+  border: 1.5px solid rgba(0, 195, 0, 0.25);
+}
+
+.cmp-access-deco__diamond--b {
+  width: 24px; height: 24px;
+  bottom: 18%; right: 40%;
+  border: 2px solid rgba(255, 255, 255, 0.12);
+}
+
+/* ── グラデーションブロブ ── */
+.cmp-access-deco__blob {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.cmp-access-deco__blob--a {
+  width: clamp(260px, 36vw, 500px);
+  height: clamp(260px, 36vw, 500px);
+  top: 10%; right: -8%;
+  background: radial-gradient(ellipse, rgba(0, 195, 0, 0.055) 0%, transparent 65%);
+}
+
+.cmp-access-deco__blob--b {
+  width: clamp(200px, 28vw, 380px);
+  height: clamp(200px, 28vw, 380px);
+  bottom: 10%; left: 40%;
+  background: radial-gradient(ellipse, rgba(0, 160, 60, 0.05) 0%, transparent 65%);
+}
+
+.cmp-access-deco__blob--c {
+  width: clamp(160px, 20vw, 280px);
+  height: clamp(160px, 20vw, 280px);
+  top: 30%; left: -5%;
+  background: radial-gradient(ellipse, rgba(0, 195, 0, 0.04) 0%, transparent 65%);
+}
+
+.cmp-access .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* アクセス情報バー */
+.cmp-access__bar,
+.cmp-access__map-full {
+  position: relative;
+  z-index: 1;
+}
+
+.cmp-access__bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  width: min(100% - 40px, var(--container));
+  margin-inline: auto;
+  padding: 14px 0;
+  background: #0b0d10;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.cmp-access__badge {
+  flex-shrink: 0;
+  display: inline-block;
+  padding: 6px 18px;
+  background: var(--color-accent);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border-radius: 999px;
+}
+
+.cmp-access__transport {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 28px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cmp-access__transport li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.5;
+}
+
+.cmp-access__transport-bullet {
+  color: var(--color-accent);
+  font-size: 14px;
+}
+
+/* 全幅マップ */
+.cmp-access__map-full {
+  width: min(100% - 40px, var(--container));
+  margin-inline: auto;
+  line-height: 0;
+}
+
+.cmp-access__map-full iframe {
+  display: block;
+  width: 100%;
+}
+
+/* ────────────────────────────────────────────────────────────
+   コーナーブラケット — 全セクション非表示
+──────────────────────────────────────────────────────────── */
+.works-deco__corner,
+.company-deco__corner {
+  display: none;
+}
+
+/* ────────────────────────────────────────────────────────────
+   company-deco を cmp-profile に適用
+──────────────────────────────────────────────────────────── */
+.cmp-profile .company-deco {
+  z-index: 0;
+}
+
+/* ────────────────────────────────────────────────────────────
+   RESPONSIVE
+──────────────────────────────────────────────────────────── */
+@media (max-width: 960px) {
+  .cmp-profile__row {
+    grid-template-columns: 140px 1fr;
+    gap: 20px;
+  }
+
+  .cmp-access__map-full iframe {
+    height: 360px;
+  }
+}
+
+@media (max-width: 767px) {
+  .cmp-profile__row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 18px 0;
+  }
+
+  .cmp-profile__term {
+    font-size: 13px;
+  }
+
+  .cmp-access__bar {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    text-align: center;
+  }
+
+
+  .cmp-access__transport {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .cmp-access__map-full iframe {
+    height: 280px;
+  }
+}

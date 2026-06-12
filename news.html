@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News | 株式会社SHiKiSAi</title>
+    <meta
+      name="description"
+      content="株式会社SHiKiSAiのお知らせ・ニュース一覧。採用支援に関する最新情報をお届けします。"
+    />
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="株式会社SHiKiSAi" />
+    <meta property="og:title" content="News | 株式会社SHiKiSAi" />
+    <meta property="og:description" content="株式会社SHiKiSAiのお知らせ・ブログ。採用活動に役立つ情報や支援事例を定期的に発信しています。" />
+    <meta property="og:url" content="https://shikisai.co.jp/news.html" />
+    <meta property="og:image" content="https://shikisai.co.jp/assets/img/logo.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="News | 株式会社SHiKiSAi" />
+    <meta name="twitter:description" content="株式会社SHiKiSAiのお知らせ・ブログ。採用活動に役立つ情報や支援事例を定期的に発信しています。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/inner.css" />
+    <link rel="stylesheet" href="css/about.css" />
+    <link rel="stylesheet" href="css/news.css" />
+  </head>
+
+  <body>
+    <div id="about-bg" aria-hidden="true">
+      <div class="about-bg__glow"></div>
+      <div class="about-bg__noise"></div>
+    </div>
+
+    <!-- ========================================
+    HEADER
+    ======================================== -->
+    <header class="site-header" id="siteHeader">
+      <div class="container header-inner">
+        <a href="index.html" class="site-logo" aria-label="SHiKiSAi トップへ">
+          <img src="assets/img/logo.png" alt="SHiKiSAi ロゴ" class="site-logo-image" />
+          <span class="site-logo-label">SHiKiSAi</span>
+        </a>
+        <nav class="pc-nav" aria-label="グローバルナビゲーション">
+          <ul class="pc-nav-list">
+            <li><a href="news.html" class="is-current">News</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="service.html">Service</a></li>
+            <li><a href="recruit.html">Recruit</a></li>
+            <li><a href="contact.html" class="nav-contact">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="menu-button" id="menuButton" aria-label="メニューを開く" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      </header>
+      <div class="mobile-menu-overlay" id="mobileMenuOverlay" aria-hidden="true"></div>
+      <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-inner">
+            <button class="mobile-menu-close" id="mobileMenuClose" aria-label="メニューを閉じる"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg></button>
+          <nav aria-label="モバイルナビゲーション">
+            <ul class="mobile-menu-list">
+              <li><a href="news.html">News</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="service.html">Service</a></li>
+              <li><a href="recruit.html">Recruit</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+    <main id="top">
+      <!-- ===================================
+      1. PAGE HERO — about-hero と全く同じ構造
+      =================================== -->
+      <div class="about-hero">
+        <div class="about-hero__deco" aria-hidden="true">
+          <div class="hero-blob hero-blob--green"></div>
+          <div class="hero-blob hero-blob--dark"></div>
+          <span class="about-hero__deco-ring about-hero__deco-ring--a"></span>
+          <span class="about-hero__deco-ring about-hero__deco-ring--b"></span>
+          <span class="about-hero__deco-ring about-hero__deco-ring--c"></span>
+          <span class="about-hero__deco-ring about-hero__deco-ring--d"></span>
+          <span class="about-hero__deco-ring about-hero__deco-ring--e"></span>
+          <span class="hero-fdot hero-fdot--1"></span>
+          <span class="hero-fdot hero-fdot--2"></span>
+          <span class="hero-fdot hero-fdot--3"></span>
+          <span class="hero-fdot hero-fdot--4"></span>
+          <div class="hero-grid-overlay"></div>
+          <div class="hero-hline hero-hline--1"></div>
+          <div class="hero-hline hero-hline--2"></div>
+        </div>
+        <div class="about-hero__bg-text" aria-hidden="true">NEWS</div>
+        <div class="container about-hero__inner">
+
+          <p class="about-hero__eyebrow js-reveal">お知らせ</p>
+          <h1 class="about-hero__title js-reveal">NEWS</h1>
+          <p class="about-hero__desc js-reveal">
+            SHiKiSAiからの最新情報・<br />お知らせをお届けします。
+          </p>
+          <div class="about-hero__scroll js-reveal" aria-hidden="true">
+            <span class="about-hero__scroll-pulse"></span>
+            <span class="about-hero__scroll-line"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===================================
+      2. NEWS LIST
+      =================================== -->
+      <section class="news-section" aria-label="ニュース一覧">
+        <div class="news-deco" aria-hidden="true">
+          <!-- layer--far: アーク（最も遅い・奥） -->
+          <div class="news-deco__layer news-deco__layer--far">
+            <span class="news-deco__arc news-deco__arc--1"></span>
+            <span class="news-deco__arc news-deco__arc--2"></span>
+            <span class="news-deco__arc news-deco__arc--3"></span>
+            <span class="news-deco__arc news-deco__arc--4"></span>
+            <span class="news-deco__arc news-deco__arc--5"></span>
+          </div>
+          <!-- layer--near: ブロブ（中間速度） -->
+          <div class="news-deco__layer news-deco__layer--near">
+            <span class="news-deco__blob news-deco__blob--a"></span>
+            <span class="news-deco__blob news-deco__blob--b"></span>
+          </div>
+        </div>
+        <div class="container">
+
+          <!-- ── フィルター ── -->
+          <div class="news-filter js-reveal" id="newsFilter">
+
+            <div class="news-filter__group">
+              <span class="news-filter__label" id="cat-label">カテゴリ：</span>
+              <div
+                class="news-filter__tabs"
+                role="tablist"
+                aria-labelledby="cat-label"
+              >
+                <button
+                  class="news-filter__tab is-active"
+                  role="tab"
+                  aria-selected="true"
+                  data-filter-cat="all"
+                >すべて</button>
+                <button
+                  class="news-filter__tab"
+                  role="tab"
+                  aria-selected="false"
+                  data-filter-cat="notice"
+                >お知らせ</button>
+                <button
+                  class="news-filter__tab"
+                  role="tab"
+                  aria-selected="false"
+                  data-filter-cat="media"
+                >メディア掲載</button>
+                <button
+                  class="news-filter__tab"
+                  role="tab"
+                  aria-selected="false"
+                  data-filter-cat="press"
+                >プレスリリース</button>
+                <button
+                  class="news-filter__tab"
+                  role="tab"
+                  aria-selected="false"
+                  data-filter-cat="column"
+                >採用コラム</button>
+              </div>
+            </div>
+
+            <div class="news-filter__group">
+              <span class="news-filter__label" id="year-label">年度：</span>
+              <div class="news-dropdown" id="yearDropdown" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="year-label">
+                <button class="news-dropdown__trigger" type="button" aria-label="年度で絞り込む">
+                  <span class="news-dropdown__value" id="yearValue">すべて</span>
+                  <svg class="news-dropdown__chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                    <polyline points="5,8 10,13 15,8"/>
+                  </svg>
+                </button>
+                <ul class="news-dropdown__list" role="listbox" aria-labelledby="year-label" id="yearList">
+                  <li class="news-dropdown__option is-selected" role="option" aria-selected="true"  data-year-opt="all">すべて</li>
+                  <li class="news-dropdown__option" role="option" aria-selected="false" data-year-opt="2026">2026年</li>
+                  <li class="news-dropdown__option" role="option" aria-selected="false" data-year-opt="2025">2025年</li>
+                  <li class="news-dropdown__option" role="option" aria-selected="false" data-year-opt="2024">2024年</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- ── ニュースリスト ── -->
+          <div
+            class="news-list-wrap"
+            aria-live="polite"
+            aria-atomic="false"
+          >
+            <ul class="news-list" id="newsList">
+
+              <li class="news-item" data-cat="notice" data-year="2026">
+                <a href="#" class="news-item__link">
+                  <div class="news-item__meta">
+                    <time class="news-item__date" datetime="2026-06-01">2026.06.01</time>
+                    <span class="news-item__badge news-item__badge--notice">お知らせ</span>
+                  </div>
+                  <p class="news-item__title">採用支援サービスのご案内を更新しました</p>
+                  <span class="news-item__arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg>
+                  </span>
+                </a>
+              </li>
+
+              <li class="news-item" data-cat="press" data-year="2026">
+                <a href="#" class="news-item__link">
+                  <div class="news-item__meta">
+                    <time class="news-item__date" datetime="2026-05-15">2026.05.15</time>
+                    <span class="news-item__badge news-item__badge--press">プレスリリース</span>
+                  </div>
+                  <p class="news-item__title">株式会社SHiKiSAi、採用支援コンサルティング事業を正式ローンチしました</p>
+                  <span class="news-item__arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg>
+                  </span>
+                </a>
+              </li>
+
+              <li class="news-item" data-cat="column" data-year="2026">
+                <a href="#" class="news-item__link">
+                  <div class="news-item__meta">
+                    <time class="news-item__date" datetime="2026-04-10">2026.04.10</time>
+                    <span class="news-item__badge news-item__badge--column">採用コラム</span>
+                  </div>
+                  <p class="news-item__title">【採用コラム】無料媒体だけで採用を成功させる3つのポイント</p>
+                  <span class="news-item__arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg>
+                  </span>
+                </a>
+              </li>
+
+              <li class="news-item" data-cat="media" data-year="2026">
+                <a href="#" class="news-item__link">
+                  <div class="news-item__meta">
+                    <time class="news-item__date" datetime="2026-03-20">2026.03.20</time>
+                    <span class="news-item__badge news-item__badge--media">メディア掲載</span>
+                  </div>
+                  <p class="news-item__title">日経ビジネスオンラインにて代表インタビューが掲載されました</p>
+                  <span class="news-item__arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg>
+                  </span>
+                </a>
+              </li>
+
+              <li class="news-item" data-cat="notice" data-year="2026">
+                <a href="#" class="news-item__link">
+                  <div class="news-item__meta">
+                    <time class="news-item__date" datetime="2026-02-01">2026.02.01</time>
+                    <span class="news-item__badge news-item__badge--notice">お知らせ</span>
+                  </div>
+                  <p class="news-item__title">年末年始の休業期間についてのお知らせ</p>
+                  <span class="news-item__arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg>
+                  </span>
+                </a>
+              </li>
+
+              <li class="news-item" data-cat="column" data-year="2025">
+                <a href="#" class="news-item__link">
+                  <div class="news-item__meta">
+                    <time class="news-item__date" datetime="2025-12-05">2025.12.05</time>
+                    <span class="news-item__badge news-item__badge--column">採用コラム</span>
+                  </div>
+                  <p class="news-item__title">SNS採用が主流になった時代に必要な企業ブランディングとは</p>
+                  <span class="news-item__arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg>
+                  </span>
+                </a>
+              </li>
+
+              <li class="news-item" data-cat="notice" data-year="2025">
+                <a href="#" class="news-item__link">
+                  <div class="news-item__meta">
+                    <time class="news-item__date" datetime="2025-10-15">2025.10.15</time>
+                    <span class="news-item__badge news-item__badge--notice">お知らせ</span>
+                  </div>
+                  <p class="news-item__title">Webサイトをリニューアルしました</p>
+                  <span class="news-item__arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg>
+                  </span>
+                </a>
+              </li>
+
+              <li class="news-item" data-cat="press" data-year="2025">
+                <a href="#" class="news-item__link">
+                  <div class="news-item__meta">
+                    <time class="news-item__date" datetime="2025-09-01">2025.09.01</time>
+                    <span class="news-item__badge news-item__badge--press">プレスリリース</span>
+                  </div>
+                  <p class="news-item__title">株式会社SHiKiSAi 設立のお知らせ</p>
+                  <span class="news-item__arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg>
+                  </span>
+                </a>
+              </li>
+
+              <li class="news-item" data-cat="media" data-year="2025">
+                <a href="#" class="news-item__link">
+                  <div class="news-item__meta">
+                    <time class="news-item__date" datetime="2025-07-20">2025.07.20</time>
+                    <span class="news-item__badge news-item__badge--media">メディア掲載</span>
+                  </div>
+                  <p class="news-item__title">名古屋経済新聞に代表コメントが掲載されました</p>
+                  <span class="news-item__arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg>
+                  </span>
+                </a>
+              </li>
+
+              <li class="news-item" data-cat="column" data-year="2024">
+                <a href="#" class="news-item__link">
+                  <div class="news-item__meta">
+                    <time class="news-item__date" datetime="2024-11-10">2024.11.10</time>
+                    <span class="news-item__badge news-item__badge--column">採用コラム</span>
+                  </div>
+                  <p class="news-item__title">中小企業が採用コストゼロで成果を出すためのロードマップ</p>
+                  <span class="news-item__arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg>
+                  </span>
+                </a>
+              </li>
+
+            </ul>
+
+
+          </div>
+
+          <!-- ── ページネーション ── -->
+          <nav class="news-pagination" id="newsPagination" aria-label="ページナビゲーション">
+            <button class="news-pagination__btn news-pagination__btn--prev" id="paginationPrev" aria-label="前のページ" disabled>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12,19 5,12 12,5"/></svg>
+            </button>
+            <ol class="news-pagination__pages" id="paginationPages" role="list"></ol>
+            <button class="news-pagination__btn news-pagination__btn--next" id="paginationNext" aria-label="次のページ">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg>
+            </button>
+          </nav>
+
+        </div>
+      </section>
+
+      <!-- ===================================
+      3. SPLIT CTA
+      =================================== -->
+      <section class="split-cta">
+        <div class="split-cta-item split-cta-item-green" id="contact">
+          <div class="split-cta-bg split-cta-bg-contact"></div>
+          <div id="sparkles-cta" class="sparkles-cta-layer" aria-hidden="true"></div>
+          <div class="sparkles-cta-lines" aria-hidden="true">
+            <span class="sparkles-line sparkles-line--wide sparkles-line--blur"></span>
+            <span class="sparkles-line sparkles-line--wide"></span>
+            <span class="sparkles-line sparkles-line--narrow sparkles-line--blur"></span>
+            <span class="sparkles-line sparkles-line--narrow"></span>
+            <span class="sparkles-line-mask"></span>
+          </div>
+          <div class="split-cta-content">
+            <p class="split-cta-label">Contact</p>
+            <h2 class="split-cta-title">まずは採用の悩みを<br />整理するところから</h2>
+            <p class="split-cta-text">支援内容、お見積りなど、まずはお気軽にお問い合わせください。</p>
+            <a href="contact.html" class="btn btn-dark">お問い合わせ</a>
+          </div>
+        </div>
+        <div class="split-cta-item split-cta-item-dark">
+          <div class="split-cta-bg split-cta-bg-recruit"></div>
+          <div class="split-cta-content">
+            <p class="split-cta-label">Recruit</p>
+            <h2 class="split-cta-title">価値ある支援を<br />一緒につくる仲間へ</h2>
+            <p class="split-cta-text">企業支援を通じて社会に価値を届ける仲間を募集しています。</p>
+            <a href="recruit.html" class="btn btn-primary">採用情報を見る</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ========================================
+    FOOTER
+    ======================================== -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="site-logo footer-logo" aria-label="SHiKiSAi トップへ">
+            <img src="assets/img/logo.png" alt="SHiKiSAi ロゴ" class="site-logo-image" />
+            <span class="site-logo-label">SHiKiSAi</span>
+          </a>
+          <p class="footer-tagline">彩りある人生を、<br />働く環境づくりから支える。</p>
+        </div>
+        <nav class="footer-nav-wrap" aria-label="フッターナビゲーション">
+          <div class="footer-nav-col">
+            <div class="footer-nav-item"><a href="about.html"><strong class="footer-nav__en">About</strong><span class="footer-nav__ja">SHiKiSAiについて</span></a></div>
+            <div class="footer-nav-item"><a href="service.html"><strong class="footer-nav__en">Service</strong><span class="footer-nav__ja">サービス内容</span></a></div>
+          </div>
+          <div class="footer-nav-col">
+            <div class="footer-nav-item"><a href="news.html"><strong class="footer-nav__en">News</strong><span class="footer-nav__ja">ニュース</span></a></div>
+            <div class="footer-nav-item"><a href="recruit.html"><strong class="footer-nav__en">Recruit</strong><span class="footer-nav__ja">採用情報</span></a></div>
+            <div class="footer-nav-item"><a href="contact.html"><strong class="footer-nav__en">Contact</strong><span class="footer-nav__ja">お問い合わせ</span></a></div>
+            <div class="footer-nav-item footer-nav-item--privacy"><a href="#" class="footer-nav__privacy">→ Privacy Policy</a></div>
+          </div>
+        </nav>
+      </div>
+      <div class="container footer-bottom">
+        <div class="footer-bottom__address">
+          <p>株式会社SHiKiSAi</p>
+          <p>〒460-0008　愛知県名古屋市中区栄X-X-X</p>
+        </div>
+        <p class="footer-bottom__copy">COPYRIGHT © SHiKiSAi ALL RIGHT RESERVED.</p>
+      </div>
+      <a href="#top" class="footer-page-top" aria-label="ページトップへ">
+        Page Top
+        <svg viewBox="0 0 14 20" aria-hidden="true"><line x1="7" y1="18" x2="7" y2="2"/><polyline points="2,7 7,2 12,7"/></svg>
+      </a>
+    </footer>
+
+    <button id="scrollTopBtn" class="scroll-top-btn" aria-label="ページトップへ戻る"><svg viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5,12 12,5 19,12"/></svg></button>
+    <script src="js/main.js"></script>
+    <script>
+    // News section — multi-layer parallax
+    // layer--far: 0.2（最も遅い・奥） / layer--near: 0.45（中間）
+    (() => {
+      const section = document.querySelector('.news-section');
+      if (!section) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      const layers = [
+        { el: section.querySelector('.news-deco__layer--far'),  factor: 0.2  },
+        { el: section.querySelector('.news-deco__layer--near'), factor: 0.45 },
+      ].filter(l => l.el);
+
+      let ticking = false;
+
+      const update = () => {
+        const top = section.getBoundingClientRect().top;
+        layers.forEach(({ el, factor }) => {
+          el.style.transform = `translateY(${-top * (1 - factor)}px)`;
+        });
+        ticking = false;
+      };
+
+      window.addEventListener('scroll', () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(update);
+      }, { passive: true });
+
+      window.addEventListener('resize', update);
+      update();
+    })();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/slim@3/tsparticles.slim.bundle.min.js"></script>
+    <script src="js/sparkles.js"></script>
+    <script type="module" src="js/about-animations.js"></script>
+    <script>
+    (function () {
+      'use strict';
+
+      var ITEMS_PER_PAGE = 8;
+      var allItems = Array.from(document.querySelectorAll('.news-item'));
+      var list     = document.getElementById('newsList');
+      var paginationEl = document.getElementById('newsPagination');
+      var pagesEl  = document.getElementById('paginationPages');
+      var prevBtn  = document.getElementById('paginationPrev');
+      var nextBtn  = document.getElementById('paginationNext');
+
+      var activeCat  = 'all';
+      var activeYear = 'all';
+      var currentPage = 1;
+
+      /* ── フィルタリング ── */
+      function getFiltered() {
+        return allItems.filter(function (item) {
+          var catOk  = activeCat  === 'all' || item.dataset.cat  === activeCat;
+          var yearOk = activeYear === 'all' || item.dataset.year === activeYear;
+          return catOk && yearOk;
+        });
+      }
+
+      /* ── ページ表示 ── */
+      function render() {
+        var filtered = getFiltered();
+        var totalPages = Math.max(1, Math.ceil(filtered.length / ITEMS_PER_PAGE));
+        currentPage = Math.min(currentPage, totalPages);
+        var start = (currentPage - 1) * ITEMS_PER_PAGE;
+        var end   = start + ITEMS_PER_PAGE;
+
+        /* 全アイテム非表示 → 対象ページ分だけ表示 */
+        allItems.forEach(function (item) { item.hidden = true; });
+        filtered.forEach(function (item, i) {
+          item.hidden = !(i >= start && i < end);
+        });
+
+        /* スタガーアニメーション */
+        filtered.slice(start, end).forEach(function (item, i) {
+          item.style.setProperty('--news-i', i);
+          item.classList.remove('news-item--in');
+          /* reflow */
+          void item.offsetWidth;
+          item.classList.add('news-item--in');
+        });
+
+
+        /* ページネーション更新 */
+        renderPagination(totalPages);
+      }
+
+      /* ── ページネーション描画 ── */
+      function renderPagination(totalPages) {
+        pagesEl.innerHTML = '';
+        if (totalPages <= 1) {
+          paginationEl.hidden = true;
+          return;
+        }
+        paginationEl.hidden = false;
+
+        for (var p = 1; p <= totalPages; p++) {
+          var li  = document.createElement('li');
+          var btn = document.createElement('button');
+          btn.className = 'news-pagination__page' + (p === currentPage ? ' is-active' : '');
+          btn.textContent = p;
+          btn.setAttribute('aria-label', p + 'ページ目');
+          if (p === currentPage) btn.setAttribute('aria-current', 'page');
+          btn.dataset.page = p;
+          btn.addEventListener('click', function () {
+            currentPage = parseInt(this.dataset.page, 10);
+            render();
+            document.getElementById('newsFilter').scrollIntoView({ behavior: 'smooth', block: 'start' });
+          });
+          li.appendChild(btn);
+          pagesEl.appendChild(li);
+        }
+
+        prevBtn.disabled = currentPage === 1;
+        nextBtn.disabled = currentPage === totalPages;
+      }
+
+      /* ── フィルタータブ ── */
+      document.querySelectorAll('[data-filter-cat]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          document.querySelectorAll('[data-filter-cat]').forEach(function (t) {
+            t.classList.remove('is-active');
+            t.setAttribute('aria-selected', 'false');
+          });
+          btn.classList.add('is-active');
+          btn.setAttribute('aria-selected', 'true');
+          activeCat  = btn.dataset.filterCat;
+          currentPage = 1;
+          render();
+        });
+      });
+
+      /* ── 年度カスタムドロップダウン ── */
+      var dropdown  = document.getElementById('yearDropdown');
+      var trigger   = dropdown.querySelector('.news-dropdown__trigger');
+      var valueEl   = document.getElementById('yearValue');
+      var optionEls = dropdown.querySelectorAll('.news-dropdown__option');
+
+      function openDropdown() {
+        dropdown.setAttribute('aria-expanded', 'true');
+        dropdown.classList.add('is-open');
+      }
+
+      function closeDropdown() {
+        dropdown.setAttribute('aria-expanded', 'false');
+        dropdown.classList.remove('is-open');
+      }
+
+      trigger.addEventListener('click', function () {
+        dropdown.classList.contains('is-open') ? closeDropdown() : openDropdown();
+      });
+
+      optionEls.forEach(function (opt) {
+        opt.addEventListener('click', function () {
+          optionEls.forEach(function (o) { o.classList.remove('is-selected'); o.setAttribute('aria-selected', 'false'); });
+          opt.classList.add('is-selected');
+          opt.setAttribute('aria-selected', 'true');
+          valueEl.textContent = opt.textContent;
+          activeYear  = opt.dataset.yearOpt;
+          currentPage = 1;
+          closeDropdown();
+          render();
+        });
+      });
+
+      /* クリックアウトで閉じる */
+      document.addEventListener('click', function (e) {
+        if (!dropdown.contains(e.target)) closeDropdown();
+      });
+
+      /* Escape で閉じる */
+      dropdown.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') { closeDropdown(); trigger.focus(); }
+      });
+
+      /* ── Prev / Next ── */
+      prevBtn.addEventListener('click', function () {
+        if (currentPage > 1) {
+          currentPage--;
+          render();
+          document.getElementById('newsFilter').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+
+      nextBtn.addEventListener('click', function () {
+        var totalPages = Math.ceil(getFiltered().length / ITEMS_PER_PAGE);
+        if (currentPage < totalPages) {
+          currentPage++;
+          render();
+          document.getElementById('newsFilter').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+
+      /* ── 初期表示 ── */
+      render();
+    })();
+    </script>
+  </body>
+</html>

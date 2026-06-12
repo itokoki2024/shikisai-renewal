@@ -1,0 +1,12 @@
+{
+  "name": "shikisai-renewal",
+  "version": "1.0.0",
+  "description": "SHiKiSAi 採用コンサルティング コーポレートサイト",
+  "private": true,
+  "devDependencies": {
+    "prettier": "^3.5.3"
+  },
+  "scripts": {
+    "format": "prettier --write ."
+  }
+}

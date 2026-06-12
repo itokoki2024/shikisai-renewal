@@ -1,0 +1,30 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# エディタ
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ログ・一時ファイル
+*.log
+*.tmp
+
+# Node
+node_modules/
+npm-debug.log*
+
+# ビルド成果物
+dist/
+build/
+
+# 開発用スクリーンショット
+*.png.bak
+
+# Claude / エージェント系（スキルは除外）
+.agents/context/
+.claude/
+.playwright-mcp/

@@ -1,0 +1,173 @@
+/* =========================
+   Inner Page — 下層ページ共通スタイル
+========================= */
+
+/* ページヘッダー（各下層ページ上部のタイトルエリア） */
+.page-header {
+  padding: calc(var(--header-height) + 72px) 0 72px;
+  background: var(--color-bg);
+  color: var(--color-white);
+  text-align: center;
+}
+
+.page-header__eyebrow {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: var(--color-accent);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.page-header__title {
+  font-size: clamp(32px, 5vw, 60px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.page-header__text {
+  margin-top: 20px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 17px;
+  max-width: 640px;
+  margin-inline: auto;
+}
+
+/* パンくずリスト */
+.breadcrumb {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--color-border-dark);
+}
+
+.breadcrumb-list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--color-text-soft);
+}
+
+.breadcrumb-list li + li::before {
+  content: "/";
+  opacity: 0.5;
+}
+
+.breadcrumb-list a {
+  color: var(--color-text-soft);
+  transition: color 0.2s;
+}
+
+.breadcrumb-list a:hover {
+  color: var(--color-accent);
+}
+
+.breadcrumb-list li:last-child {
+  color: var(--color-text);
+}
+
+/* 下層ページ本文エリア */
+.page-content {
+  padding: 80px 0 120px;
+}
+
+/* セクション区切り（下層ページ用） */
+.inner-section {
+  padding: 80px 0;
+}
+
+.inner-section + .inner-section {
+  border-top: 1px solid var(--color-border-dark);
+}
+
+/* 2カラムレイアウト */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.two-col--reverse {
+  direction: rtl;
+}
+
+.two-col--reverse > * {
+  direction: ltr;
+}
+
+/* テキスト本文 */
+.body-text {
+  font-size: 17px;
+  line-height: 1.9;
+  color: var(--color-text);
+}
+
+.body-text p + p {
+  margin-top: 1.4em;
+}
+
+/* CTAバナー（下層ページ下部） */
+.inner-cta {
+  background: var(--color-bg);
+  color: var(--color-white);
+  text-align: center;
+  padding: 96px 0;
+}
+
+.inner-cta__title {
+  font-size: clamp(24px, 3.5vw, 44px);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.inner-cta__text {
+  margin-top: 16px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 17px;
+}
+
+.inner-cta__actions {
+  margin-top: 36px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 767px) {
+  .page-header {
+    padding: calc(var(--header-height) + 48px) 0 56px;
+    text-align: left;
+  }
+
+  .page-header__text {
+    margin-inline: 0;
+  }
+
+  .two-col {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .two-col--reverse {
+    direction: ltr;
+  }
+
+  .inner-cta__actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .inner-section {
+    padding: 60px 0;
+  }
+
+  .page-content {
+    padding: 56px 0 88px;
+  }
+}

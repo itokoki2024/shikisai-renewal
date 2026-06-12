@@ -1,0 +1,552 @@
+/* ================================================================
+   CONTACT PAGE — contact.css
+================================================================ */
+
+/* ────────────────────────────────────────────────────────────
+   1. CONTACT INTRO — ダーク帯（3つの情報カード）
+──────────────────────────────────────────────────────────── */
+.contact-intro {
+  background: var(--color-bg);
+  padding: 72px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-intro::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 195, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 195, 0, 0.03) 1px, transparent 1px);
+  background-size: 52px 52px;
+  pointer-events: none;
+}
+
+.contact-intro__glow {
+  position: absolute;
+  top: -30%;
+  right: -10%;
+  width: 55%;
+  height: 160%;
+  background: radial-gradient(ellipse, rgba(0, 195, 0, 0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.contact-intro .container {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.contact-info-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 32px 28px;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.contact-info-card:hover {
+  border-color: rgba(0, 195, 0, 0.25);
+  background: rgba(0, 195, 0, 0.04);
+}
+
+.contact-info-card__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(0, 195, 0, 0.12);
+  border: 1px solid rgba(0, 195, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.contact-info-card__icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--color-accent);
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.contact-info-card__label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 8px;
+}
+
+.contact-info-card__value {
+  font-size: clamp(16px, 1.6vw, 18px);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.contact-info-card__note {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.6;
+}
+
+/* ────────────────────────────────────────────────────────────
+   2. CONTACT FORM SECTION — ライト帯
+──────────────────────────────────────────────────────────── */
+.contact-form-section {
+  background: var(--color-light);
+  padding: clamp(80px, 10vw, 120px) 0 clamp(80px, 10vw, 140px);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-form-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(0, 195, 0, 0.04) 1px, transparent 1px);
+  background-size: 44px 44px;
+  pointer-events: none;
+}
+
+.contact-form-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-form-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: clamp(56px, 8vw, 112px);
+  align-items: start;
+}
+
+/* ── 左カラム: リード文 ── */
+.contact-form-lead {
+  position: sticky;
+  top: calc(var(--header-height) + 32px);
+}
+
+.contact-form-lead__eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 18px;
+}
+
+.contact-form-lead__title {
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  margin-bottom: 24px;
+}
+
+.contact-form-lead__desc {
+  font-size: 14px;
+  line-height: 2;
+  color: var(--color-text-soft);
+  margin-bottom: 40px;
+}
+
+.contact-consult-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid var(--color-border-dark);
+}
+
+.contact-consult-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--color-border-dark);
+  font-size: 14px;
+  color: #3d4452;
+  line-height: 1.5;
+}
+
+.contact-consult-item__dot {
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+/* ── 右カラム: フォーム ── */
+.contact-form {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: var(--radius-lg);
+  padding: clamp(36px, 5vw, 56px) clamp(32px, 4.5vw, 52px);
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.06);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.form-row .form-group {
+  margin-bottom: 0;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.form-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.form-required {
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--color-accent);
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.04em;
+}
+
+.form-optional {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.35);
+  background: rgba(0, 0, 0, 0.06);
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.04em;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 13px 16px;
+  font-size: 15px;
+  font-family: inherit;
+  color: var(--color-text);
+  background: #fafafa;
+  border: 1.5px solid rgba(0, 0, 0, 0.12);
+  border-radius: var(--radius-sm);
+  transition: border-color 0.22s ease, background 0.22s ease, box-shadow 0.22s ease;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: rgba(0, 0, 0, 0.28);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--color-accent);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(0, 195, 0, 0.1);
+}
+
+.form-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+.form-select option[value=""] {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 140px;
+  line-height: 1.7;
+}
+
+/* ── プライバシー同意 ── */
+.form-privacy {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 28px 0 32px;
+  padding: 20px;
+  background: rgba(0, 195, 0, 0.04);
+  border: 1px solid rgba(0, 195, 0, 0.15);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.form-privacy__checkbox {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  margin-top: 1px;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  position: relative;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.form-privacy__checkbox:checked {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.form-privacy__checkbox:checked::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 8px;
+  height: 5px;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(-45deg);
+}
+
+.form-privacy__checkbox:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.form-privacy__text {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #3d4452;
+}
+
+.form-privacy__text a {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+/* ── 送信ボタン ── */
+.form-submit {
+  width: 100%;
+  padding: 18px 32px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #fff;
+  background: var(--color-text);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.form-submit svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.22s ease;
+}
+
+.form-submit:hover {
+  background: #1e2430;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.form-submit:hover svg {
+  transform: translateX(4px);
+}
+
+.form-submit:active {
+  transform: translateY(1px);
+}
+
+.form-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.form-note {
+  margin-top: 16px;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.4);
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* ── 送信完了メッセージ ── */
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 48px 24px;
+}
+
+.form-success__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(0, 195, 0, 0.1);
+  border: 2px solid var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+}
+
+.form-success__icon svg {
+  width: 28px;
+  height: 28px;
+  stroke: var(--color-accent);
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.form-success__title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 12px;
+}
+
+.form-success__text {
+  font-size: 14px;
+  color: var(--color-text-soft);
+  line-height: 1.8;
+}
+
+/* ────────────────────────────────────────────────────────────
+   RESPONSIVE
+──────────────────────────────────────────────────────────── */
+@media (max-width: 960px) {
+  .contact-info-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .contact-info-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0 20px;
+    align-items: start;
+    padding: 24px;
+  }
+
+  .contact-info-card__icon {
+    margin-bottom: 0;
+    grid-row: 1 / 3;
+  }
+
+  .contact-form-wrap {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .contact-form-lead {
+    position: static;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-bottom: 28px;
+  }
+
+  .form-row .form-group {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .contact-intro {
+    padding: 56px 0;
+  }
+
+  .contact-form-section {
+    padding: 72px 0 96px;
+  }
+
+  .contact-form {
+    padding: 40px 24px 48px;
+    border-radius: var(--radius-md);
+  }
+
+  .form-row {
+    gap: 32px;
+    margin-bottom: 32px;
+  }
+
+  .form-group {
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  .form-row .form-group {
+    margin-bottom: 0;
+  }
+
+  .form-input,
+  .form-select,
+  .form-textarea {
+    padding: 16px;
+    font-size: 16px; /* iOS zoom 防止 */
+  }
+
+  .form-textarea {
+    min-height: 160px;
+  }
+
+  .form-privacy {
+    margin: 40px 0 44px;
+    padding: 20px 16px;
+  }
+
+  .form-submit {
+    padding: 20px 32px;
+    font-size: 17px;
+  }
+
+  .form-note {
+    margin-top: 20px;
+  }
+}
