@@ -1544,6 +1544,19 @@
   z-index: 2;
 }
 
+/* 地球上のロゴオーバーレイ */
+.svc-earth__logo {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 42%;
+  opacity: 0.55;
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(0 0 12px rgba(0, 140, 255, 0.4));
+}
+
 /* 地平線グロー */
 .svc-horizon {
   position: absolute;
