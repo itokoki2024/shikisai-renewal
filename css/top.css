@@ -1465,37 +1465,153 @@
    背景装飾 統一リデザイン（Service → Works → Company → News）
    ======================================================= */
 
-/* ── Service: 装飾を復活、グロー追加 ── */
-.svc-section > .gradient-dots-bg {
-  display: block;
-  top: -20%;
-  height: 140%;
-  opacity: 0.30;
-}
-.svc-flower-bg {
-  display: block;
-  opacity: 0.06;
-}
-.svc-section::before {
-  content: '';
+/* ── Service: Cosmic Parallax Background ── */
+.svc-section::before,
+.svc-section::after { display: none; }
+
+/* 宇宙背景コンテナ */
+.svc-cosmic-bg {
   position: absolute;
   inset: 0;
+  overflow: hidden;
   z-index: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(ellipse 55% 50% at 88% 18%, rgba(0,140,255,0.10) 0%, transparent 100%),
-    radial-gradient(ellipse 40% 55% at 12% 82%, rgba(0,120,255,0.05) 0%, transparent 100%);
+  background: radial-gradient(ellipse at bottom, #122030 0%, #05080b 100%);
 }
-.svc-section::after {
+
+/* 星レイヤー共通 */
+.cosmic-stars,
+.cosmic-stars-medium,
+.cosmic-stars-large {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: transparent;
+  border-radius: 50%;
+}
+.cosmic-stars::after,
+.cosmic-stars-medium::after,
+.cosmic-stars-large::after {
   content: '';
   position: absolute;
-  top: -100px; right: -100px;
-  width: 520px; height: 520px;
+  left: 0;
+  background: transparent;
   border-radius: 50%;
-  border: 1px solid rgba(0,140,255,0.10);
-  box-shadow: 0 0 0 90px rgba(0,140,255,0.04), 0 0 0 180px rgba(0,140,255,0.02);
+}
+
+/* 小さい星（700個・50秒） */
+.cosmic-stars {
+  width: 1px; height: 1px;
+  animation: svcAnimStar 50s linear infinite;
+}
+.cosmic-stars::after {
+  top: 2000px; width: 1px; height: 1px;
+  box-shadow: var(--stars-sm, none);
+}
+
+/* 中くらいの星（200個・100秒） */
+.cosmic-stars-medium {
+  width: 2px; height: 2px;
+  animation: svcAnimStar 100s linear infinite;
+}
+.cosmic-stars-medium::after {
+  top: 2000px; width: 2px; height: 2px;
+  box-shadow: var(--stars-md, none);
+}
+
+/* 大きい星（100個・200秒） */
+.cosmic-stars-large {
+  width: 3px; height: 3px;
+  animation: svcAnimStar 200s linear infinite;
+}
+.cosmic-stars-large::after {
+  top: 2000px; width: 3px; height: 3px;
+  box-shadow: var(--stars-lg, none);
+}
+
+/* 地球 */
+.svc-earth {
+  position: absolute;
+  bottom: -340px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px; height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 38% 32%, #1e3a5f 0%, #0c1e33 45%, #04090f 100%);
+  box-shadow:
+    0 0 80px rgba(0, 140, 255, 0.28),
+    0 0 160px rgba(0, 100, 200, 0.10),
+    inset 0 0 60px rgba(0, 120, 255, 0.07);
+  z-index: 2;
+}
+
+/* 地平線グロー */
+.svc-horizon {
+  position: absolute;
+  bottom: 0; width: 100%; height: 60%;
+  z-index: 2;
   pointer-events: none;
-  z-index: 0;
+}
+.svc-horizon-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 90% 50% at 50% 100%,
+    rgba(0, 140, 255, 0.18) 0%,
+    rgba(0, 80, 180, 0.06) 50%,
+    transparent 70%
+  );
+}
+
+/* コンテンツを宇宙背景の上に */
+.svc-section > .container { position: relative; z-index: 3; }
+
+/* 星流れアニメーション */
+@keyframes svcAnimStar {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-2000px); }
+}
+
+/* サブタイトル文字アニメーション */
+@keyframes animGravity {
+  0% { transform: translateY(-26px); opacity: 0; }
+  30%, 80% { letter-spacing: 40px; padding-left: 40px; transform: translateY(0); opacity: 1; }
+  92%, 100% { letter-spacing: 35px; padding-left: 35px; transform: translateY(-4px); opacity: 0; }
+}
+@keyframes animDont {
+  0%, 15% { transform: translateY(-26px); opacity: 0; }
+  35%, 80% { transform: translateY(0); opacity: 1; }
+  92%, 100% { transform: translateY(-4px); opacity: 0; }
+}
+@keyframes animLet {
+  0%, 25% { transform: translateY(-26px); opacity: 0; }
+  45%, 80% { transform: translateY(0); opacity: 1; }
+  92%, 100% { transform: translateY(-4px); opacity: 0; }
+}
+@keyframes animGo {
+  0%, 35% { transform: translateY(-26px); opacity: 0; }
+  55%, 80% { transform: translateY(0); opacity: 1; }
+  92%, 100% { transform: translateY(-4px); opacity: 0; }
+}
+
+/* セクション説明文をアニメーション */
+.svc-section .section-description-white {
+  overflow: hidden;
+}
+.svc-section .section-description-white .svc-anim-1 {
+  display: inline-block;
+  animation: animGravity 8s ease infinite;
+}
+.svc-section .section-description-white .svc-anim-2 {
+  display: inline-block;
+  animation: animDont 8s ease infinite;
+}
+.svc-section .section-description-white .svc-anim-3 {
+  display: inline-block;
+  animation: animLet 8s ease infinite;
+}
+.svc-section .section-description-white .svc-anim-4 {
+  display: inline-block;
+  animation: animGo 8s ease infinite;
 }
 
 /* ── Works: グロー追加 ── */
