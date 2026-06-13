@@ -1465,23 +1465,37 @@
    背景装飾 統一リデザイン（Service → Works → Company → News）
    ======================================================= */
 
-/* ── Service: 旧背景を非表示・FloatingPaths に切り替え ── */
-.svc-section > .gradient-dots-bg,
+/* ── Service: 装飾を復活、グロー追加 ── */
+.svc-section > .gradient-dots-bg {
+  display: block;
+  top: -20%;
+  height: 140%;
+  opacity: 0.30;
+}
 .svc-flower-bg {
-  display: none !important;
+  display: block;
+  opacity: 0.06;
 }
-.svc-section::before,
-.svc-section::after {
-  display: none;
-}
-
-/* FloatingPaths コンテナ */
-.svc-paths-bg {
+.svc-section::before {
+  content: '';
   position: absolute;
   inset: 0;
+  z-index: 0;
   pointer-events: none;
-  overflow: hidden;
-  z-index: 1;
+  background:
+    radial-gradient(ellipse 55% 50% at 88% 18%, rgba(0,140,255,0.10) 0%, transparent 100%),
+    radial-gradient(ellipse 40% 55% at 12% 82%, rgba(0,120,255,0.05) 0%, transparent 100%);
+}
+.svc-section::after {
+  content: '';
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 520px; height: 520px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,140,255,0.10);
+  box-shadow: 0 0 0 90px rgba(0,140,255,0.04), 0 0 0 180px rgba(0,140,255,0.02);
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* ── Works: グロー追加 ── */
