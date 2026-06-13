@@ -1637,7 +1637,7 @@
 #works .section-title { color: var(--color-white); }
 #works .section-description,
 #works .section-description-white { color: rgba(255, 255, 255, 0.75); }
-#works .section-heading-hero--dark::before { color: rgba(255, 255, 255, 0.05); }
+#works .section-heading-hero--dark::before { color: rgba(255, 255, 255, 0.10); }
 
 /* ── Company: ダーク背景に統一 ── */
 .company-section {
@@ -1660,6 +1660,7 @@
 .company-section .section-description,
 .company-section .section-label { color: var(--color-white); }
 .company-section .section-heading-hero__front { color: var(--color-accent); }
+.company-section .section-heading-hero::before { color: rgba(255, 255, 255, 0.10); }
 
 /* Companyカード: ダーク版 */
 .company-block {
@@ -1692,6 +1693,7 @@
 .news-section .section-label { color: var(--color-white); }
 .news-section .section-heading-hero__front { color: var(--color-accent); }
 .news-section .section-heading-hero--dark .section-heading-hero__front { color: var(--color-accent); }
+.news-section .section-heading-hero::before { color: rgba(255, 255, 255, 0.10); }
 
 /* Newsカード: ダーク版 */
 .news-card {
