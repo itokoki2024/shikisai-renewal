@@ -1544,13 +1544,13 @@
   z-index: 2;
 }
 
-/* 地球上のロゴオーバーレイ */
+/* 地球上のロゴオーバーレイ（地球の中心に配置・見切れOK） */
 .svc-earth__logo {
   position: absolute;
-  top: 18%;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  width: 42%;
+  transform: translate(-50%, -50%);
+  width: 52%;
   opacity: 0.55;
   pointer-events: none;
   user-select: none;
