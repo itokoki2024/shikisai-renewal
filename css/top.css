@@ -1,4 +1,11 @@
 
+/* トップページのみ青ネオンに上書き */
+:root {
+  --color-accent: #008cff;
+  --color-accent-rgb: 0, 140, 255;
+  --color-accent-deep: #0060cc;
+}
+
 /* =========================
    Hero
 ========================= */
@@ -64,7 +71,7 @@
   letter-spacing: 0.16em;
   text-transform: uppercase;
   margin-bottom: 16px;
-  text-shadow: 0 0 24px rgba(0, 195, 0, 0.45);
+  text-shadow: 0 0 24px rgba(0, 140, 255, 0.45);
 }
 
 .hero-title {
@@ -318,23 +325,23 @@
   width: clamp(400px, 56vw, 740px);
   height: clamp(400px, 56vw, 740px);
   bottom: -38%; left: -18%;
-  border: 1px solid rgba(0, 195, 0, 0.13);
+  border: 1px solid rgba(0, 140, 255, 0.13);
 }
 
 .svc-deco__ring--b {
   width: clamp(260px, 37vw, 510px);
   height: clamp(260px, 37vw, 510px);
   bottom: -14%; left: -6%;
-  border: 1px solid rgba(0, 195, 0, 0.22);
-  box-shadow: inset 0 0 50px rgba(0, 195, 0, 0.04);
+  border: 1px solid rgba(0, 140, 255, 0.22);
+  box-shadow: inset 0 0 50px rgba(0, 140, 255, 0.04);
 }
 
 .svc-deco__ring--c {
   width: clamp(120px, 17vw, 230px);
   height: clamp(120px, 17vw, 230px);
   bottom: 14%; left: 8%;
-  border: 1px solid rgba(0, 195, 0, 0.36);
-  box-shadow: 0 0 20px rgba(0, 195, 0, 0.08);
+  border: 1px solid rgba(0, 140, 255, 0.36);
+  box-shadow: 0 0 20px rgba(0, 140, 255, 0.08);
 }
 
 /* フローティングドット */
@@ -348,21 +355,21 @@
   width: 8px; height: 8px;
   bottom: 24%; left: 20%;
   opacity: 0.8;
-  box-shadow: 0 0 16px rgba(0, 195, 0, 0.65), 0 0 32px rgba(0, 195, 0, 0.25);
+  box-shadow: 0 0 16px rgba(0, 140, 255, 0.65), 0 0 32px rgba(0, 140, 255, 0.25);
 }
 
 .svc-deco__dot--2 {
   width: 5px; height: 5px;
   top: 22%; right: 14%;
   opacity: 0.65;
-  box-shadow: 0 0 12px rgba(0, 195, 0, 0.5);
+  box-shadow: 0 0 12px rgba(0, 140, 255, 0.5);
 }
 
 .svc-deco__dot--3 {
   width: 9px; height: 9px;
   top: 55%; right: 38%;
   opacity: 0.45;
-  box-shadow: 0 0 16px rgba(0, 195, 0, 0.4), 0 0 32px rgba(0, 195, 0, 0.15);
+  box-shadow: 0 0 16px rgba(0, 140, 255, 0.4), 0 0 32px rgba(0, 140, 255, 0.15);
 }
 
 /* 縦ライン（右側） */
@@ -372,8 +379,8 @@
   width: 1px;
   background: linear-gradient(to bottom,
     transparent 0%,
-    rgba(0, 195, 0, 0.3) 25%,
-    rgba(0, 195, 0, 0.3) 75%,
+    rgba(0, 140, 255, 0.3) 25%,
+    rgba(0, 140, 255, 0.3) 75%,
     transparent 100%);
 }
 
@@ -383,8 +390,8 @@
 .svc-deco__hline--1 {
   top: 30%; right: 0; width: 50%;
   background: linear-gradient(to left,
-    rgba(0, 195, 0, 0.28) 0%,
-    rgba(0, 195, 0, 0.12) 55%,
+    rgba(0, 140, 255, 0.28) 0%,
+    rgba(0, 140, 255, 0.12) 55%,
     transparent 100%);
 }
 
@@ -401,21 +408,21 @@
 
 .svc-deco__corner--tl {
   top: 32px; right: 32px;
-  border-top: 2px solid rgba(0, 195, 0, 0.52);
-  border-right: 2px solid rgba(0, 195, 0, 0.52);
+  border-top: 2px solid rgba(0, 140, 255, 0.52);
+  border-right: 2px solid rgba(0, 140, 255, 0.52);
 }
 
 .svc-deco__corner--br {
   bottom: 32px; left: 32px;
-  border-bottom: 2px solid rgba(0, 195, 0, 0.42);
-  border-left: 2px solid rgba(0, 195, 0, 0.42);
+  border-bottom: 2px solid rgba(0, 140, 255, 0.42);
+  border-left: 2px solid rgba(0, 140, 255, 0.42);
 }
 
 /* 中抜き円マーカー（○） */
 .svc-deco__circle {
   position: absolute;
   border-radius: 50%;
-  border: 1.5px solid rgba(0, 195, 0, 0.55);
+  border: 1.5px solid rgba(0, 140, 255, 0.55);
 }
 
 .svc-deco__circle--1 { width: 14px; height: 14px; top: 26%; right: 22%; }
@@ -486,11 +493,11 @@
 /* ホバー（表示後のみ）*/
 .svc-grid.is-visible .svc-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(0, 195, 0, 0.32);
+  border-color: rgba(0, 140, 255, 0.32);
   box-shadow:
     0 24px 48px rgba(0, 0, 0, 0.36),
-    0 0 0 1px rgba(0, 195, 0, 0.12),
-    0 8px 32px rgba(0, 195, 0, 0.08);
+    0 0 0 1px rgba(0, 140, 255, 0.12),
+    0 8px 32px rgba(0, 140, 255, 0.08);
 }
 
 /* 画像 */
@@ -584,23 +591,23 @@
   width: clamp(420px, 58vw, 760px);
   height: clamp(420px, 58vw, 760px);
   top: 8%; right: -18%;
-  border: 1px solid rgba(0, 195, 0, 0.14);
+  border: 1px solid rgba(0, 140, 255, 0.14);
 }
 
 .works-deco__ring--b {
   width: clamp(270px, 38vw, 520px);
   height: clamp(270px, 38vw, 520px);
   top: 22%; right: -6%;
-  border: 1px solid rgba(0, 195, 0, 0.22);
-  box-shadow: inset 0 0 60px rgba(0, 195, 0, 0.04);
+  border: 1px solid rgba(0, 140, 255, 0.22);
+  box-shadow: inset 0 0 60px rgba(0, 140, 255, 0.04);
 }
 
 .works-deco__ring--c {
   width: clamp(130px, 18vw, 240px);
   height: clamp(130px, 18vw, 240px);
   top: 32%; right: 9%;
-  border: 1px solid rgba(0, 195, 0, 0.35);
-  box-shadow: 0 0 20px rgba(0, 195, 0, 0.08);
+  border: 1px solid rgba(0, 140, 255, 0.35);
+  box-shadow: 0 0 20px rgba(0, 140, 255, 0.08);
 }
 
 /* フローティングドット */
@@ -614,28 +621,28 @@
   width: 8px; height: 8px;
   top: 18%; right: 20%;
   opacity: 0.85;
-  box-shadow: 0 0 16px rgba(0, 195, 0, 0.7), 0 0 32px rgba(0, 195, 0, 0.3);
+  box-shadow: 0 0 16px rgba(0, 140, 255, 0.7), 0 0 32px rgba(0, 140, 255, 0.3);
 }
 
 .works-deco__dot--2 {
   width: 5px; height: 5px;
   top: 52%; right: 11%;
   opacity: 0.7;
-  box-shadow: 0 0 12px rgba(0, 195, 0, 0.6);
+  box-shadow: 0 0 12px rgba(0, 140, 255, 0.6);
 }
 
 .works-deco__dot--3 {
   width: 10px; height: 10px;
   bottom: 22%; left: 12%;
   opacity: 0.6;
-  box-shadow: 0 0 18px rgba(0, 195, 0, 0.5), 0 0 36px rgba(0, 195, 0, 0.2);
+  box-shadow: 0 0 18px rgba(0, 140, 255, 0.5), 0 0 36px rgba(0, 140, 255, 0.2);
 }
 
 .works-deco__dot--4 {
   width: 6px; height: 6px;
   top: 38%; left: 42%;
   opacity: 0.5;
-  box-shadow: 0 0 12px rgba(0, 195, 0, 0.45);
+  box-shadow: 0 0 12px rgba(0, 140, 255, 0.45);
 }
 
 /* 縦アクセントライン */
@@ -649,8 +656,8 @@
   left: 6%;
   background: linear-gradient(to bottom,
     transparent 0%,
-    rgba(0, 195, 0, 0.35) 25%,
-    rgba(0, 195, 0, 0.35) 75%,
+    rgba(0, 140, 255, 0.35) 25%,
+    rgba(0, 140, 255, 0.35) 75%,
     transparent 100%);
 }
 
@@ -672,8 +679,8 @@
 .works-deco__hline--1 {
   top: 35%; left: 0; width: 55%;
   background: linear-gradient(to right,
-    rgba(0, 195, 0, 0.3) 0%,
-    rgba(0, 195, 0, 0.15) 50%,
+    rgba(0, 140, 255, 0.3) 0%,
+    rgba(0, 140, 255, 0.15) 50%,
     transparent 100%);
 }
 
@@ -693,14 +700,14 @@
 
 .works-deco__corner--tl {
   top: 14%; left: 32px;
-  border-top: 2px solid rgba(0, 195, 0, 0.55);
-  border-left: 2px solid rgba(0, 195, 0, 0.55);
+  border-top: 2px solid rgba(0, 140, 255, 0.55);
+  border-left: 2px solid rgba(0, 140, 255, 0.55);
 }
 
 .works-deco__corner--br {
   bottom: 14%; right: 32px;
-  border-bottom: 2px solid rgba(0, 195, 0, 0.45);
-  border-right: 2px solid rgba(0, 195, 0, 0.45);
+  border-bottom: 2px solid rgba(0, 140, 255, 0.45);
+  border-right: 2px solid rgba(0, 140, 255, 0.45);
 }
 
 /* クロスマーカー（+） */
@@ -713,7 +720,7 @@
 .works-deco__cross::after {
   content: '';
   position: absolute;
-  background: rgba(0, 195, 0, 0.6);
+  background: rgba(0, 140, 255, 0.6);
 }
 
 .works-deco__cross::before {
@@ -767,10 +774,10 @@
 
 .stat-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(0, 195, 0, 0.2);
+  border-color: rgba(0, 140, 255, 0.2);
   box-shadow:
     0 12px 40px rgba(16, 19, 23, 0.1),
-    0 0 0 1px rgba(0, 195, 0, 0.08);
+    0 0 0 1px rgba(0, 140, 255, 0.08);
 }
 
 .stat-card-icon {
@@ -849,23 +856,23 @@
   width: clamp(400px, 55vw, 720px);
   height: clamp(400px, 55vw, 720px);
   bottom: 8%; left: -18%;
-  border: 1px solid rgba(0, 195, 0, 0.14);
+  border: 1px solid rgba(0, 140, 255, 0.14);
 }
 
 .company-deco__ring--b {
   width: clamp(260px, 36vw, 500px);
   height: clamp(260px, 36vw, 500px);
   bottom: 22%; left: -6%;
-  border: 1px solid rgba(0, 195, 0, 0.22);
-  box-shadow: inset 0 0 50px rgba(0, 195, 0, 0.03);
+  border: 1px solid rgba(0, 140, 255, 0.22);
+  box-shadow: inset 0 0 50px rgba(0, 140, 255, 0.03);
 }
 
 .company-deco__ring--c {
   width: clamp(120px, 17vw, 220px);
   height: clamp(120px, 17vw, 220px);
   bottom: 32%; left: 8%;
-  border: 1px solid rgba(0, 195, 0, 0.35);
-  box-shadow: 0 0 18px rgba(0, 195, 0, 0.07);
+  border: 1px solid rgba(0, 140, 255, 0.35);
+  box-shadow: 0 0 18px rgba(0, 140, 255, 0.07);
 }
 
 /* フローティングドット（暗め） */
@@ -879,21 +886,21 @@
   width: 7px; height: 7px;
   bottom: 22%; left: 18%;
   opacity: 0.7;
-  box-shadow: 0 0 14px rgba(0, 195, 0, 0.5);
+  box-shadow: 0 0 14px rgba(0, 140, 255, 0.5);
 }
 
 .company-deco__dot--2 {
   width: 5px; height: 5px;
   top: 20%; right: 14%;
   opacity: 0.55;
-  box-shadow: 0 0 10px rgba(0, 195, 0, 0.4);
+  box-shadow: 0 0 10px rgba(0, 140, 255, 0.4);
 }
 
 .company-deco__dot--3 {
   width: 9px; height: 9px;
   top: 55%; right: 40%;
   opacity: 0.4;
-  box-shadow: 0 0 16px rgba(0, 195, 0, 0.35);
+  box-shadow: 0 0 16px rgba(0, 140, 255, 0.35);
 }
 
 /* 縦ライン（右側） */
@@ -904,8 +911,8 @@
   width: 1px;
   background: linear-gradient(to bottom,
     transparent 0%,
-    rgba(0, 195, 0, 0.3) 25%,
-    rgba(0, 195, 0, 0.3) 75%,
+    rgba(0, 140, 255, 0.3) 25%,
+    rgba(0, 140, 255, 0.3) 75%,
     transparent 100%);
 }
 
@@ -918,8 +925,8 @@
 .company-deco__hline--1 {
   top: 32%; right: 0; width: 52%;
   background: linear-gradient(to left,
-    rgba(0, 195, 0, 0.28) 0%,
-    rgba(0, 195, 0, 0.12) 50%,
+    rgba(0, 140, 255, 0.28) 0%,
+    rgba(0, 140, 255, 0.12) 50%,
     transparent 100%);
 }
 
@@ -939,21 +946,21 @@
 
 .company-deco__corner--tr {
   top: 14%; right: 32px;
-  border-top: 2px solid rgba(0, 195, 0, 0.5);
-  border-right: 2px solid rgba(0, 195, 0, 0.5);
+  border-top: 2px solid rgba(0, 140, 255, 0.5);
+  border-right: 2px solid rgba(0, 140, 255, 0.5);
 }
 
 .company-deco__corner--bl {
   bottom: 14%; left: 32px;
-  border-bottom: 2px solid rgba(0, 195, 0, 0.4);
-  border-left: 2px solid rgba(0, 195, 0, 0.4);
+  border-bottom: 2px solid rgba(0, 140, 255, 0.4);
+  border-left: 2px solid rgba(0, 140, 255, 0.4);
 }
 
 /* ダイヤモンドマーカー（◇ — Worksの+クロスと異なる形） */
 .company-deco__diamond {
   position: absolute;
   width: 10px; height: 10px;
-  border: 1.5px solid rgba(0, 195, 0, 0.55);
+  border: 1.5px solid rgba(0, 140, 255, 0.55);
   transform: rotate(45deg);
 }
 
@@ -980,22 +987,22 @@
   width: clamp(380px, 52vw, 680px);
   height: clamp(380px, 52vw, 680px);
   top: 8%; right: -20%;
-  border: 1px solid rgba(0, 195, 0, 0.12);
+  border: 1px solid rgba(0, 140, 255, 0.12);
 }
 
 .news-deco__ring--b {
   width: clamp(240px, 33vw, 460px);
   height: clamp(240px, 33vw, 460px);
   top: 22%; right: -7%;
-  border: 1px solid rgba(0, 195, 0, 0.2);
+  border: 1px solid rgba(0, 140, 255, 0.2);
 }
 
 .news-deco__ring--c {
   width: clamp(110px, 16vw, 200px);
   height: clamp(110px, 16vw, 200px);
   top: 32%; right: 7%;
-  border: 1px solid rgba(0, 195, 0, 0.32);
-  box-shadow: 0 0 16px rgba(0, 195, 0, 0.06);
+  border: 1px solid rgba(0, 140, 255, 0.32);
+  box-shadow: 0 0 16px rgba(0, 140, 255, 0.06);
 }
 
 /* フローティングドット */
@@ -1009,21 +1016,21 @@
   width: 7px; height: 7px;
   top: 20%; right: 22%;
   opacity: 0.65;
-  box-shadow: 0 0 14px rgba(0, 195, 0, 0.45);
+  box-shadow: 0 0 14px rgba(0, 140, 255, 0.45);
 }
 
 .news-deco__dot--2 {
   width: 5px; height: 5px;
   bottom: 25%; left: 18%;
   opacity: 0.5;
-  box-shadow: 0 0 10px rgba(0, 195, 0, 0.35);
+  box-shadow: 0 0 10px rgba(0, 140, 255, 0.35);
 }
 
 .news-deco__dot--3 {
   width: 8px; height: 8px;
   top: 50%; left: 48%;
   opacity: 0.35;
-  box-shadow: 0 0 14px rgba(0, 195, 0, 0.3);
+  box-shadow: 0 0 14px rgba(0, 140, 255, 0.3);
 }
 
 /* 縦ライン（左側） */
@@ -1034,8 +1041,8 @@
   width: 1px;
   background: linear-gradient(to bottom,
     transparent 0%,
-    rgba(0, 195, 0, 0.28) 25%,
-    rgba(0, 195, 0, 0.28) 75%,
+    rgba(0, 140, 255, 0.28) 25%,
+    rgba(0, 140, 255, 0.28) 75%,
     transparent 100%);
 }
 
@@ -1048,8 +1055,8 @@
 .news-deco__hline--1 {
   top: 38%; left: 0; width: 48%;
   background: linear-gradient(to right,
-    rgba(0, 195, 0, 0.25) 0%,
-    rgba(0, 195, 0, 0.1) 55%,
+    rgba(0, 140, 255, 0.25) 0%,
+    rgba(0, 140, 255, 0.1) 55%,
     transparent 100%);
 }
 
@@ -1069,14 +1076,14 @@
 
 .news-deco__corner--tl {
   top: 14%; left: 32px;
-  border-top: 2px solid rgba(0, 195, 0, 0.45);
-  border-left: 2px solid rgba(0, 195, 0, 0.45);
+  border-top: 2px solid rgba(0, 140, 255, 0.45);
+  border-left: 2px solid rgba(0, 140, 255, 0.45);
 }
 
 .news-deco__corner--br {
   bottom: 14%; right: 32px;
-  border-bottom: 2px solid rgba(0, 195, 0, 0.38);
-  border-right: 2px solid rgba(0, 195, 0, 0.38);
+  border-bottom: 2px solid rgba(0, 140, 255, 0.38);
+  border-right: 2px solid rgba(0, 140, 255, 0.38);
 }
 
 /* ティックマーカー（短い横線 — Worksの+、Companyの◇と異なる） */
@@ -1084,7 +1091,7 @@
   position: absolute;
   height: 1px;
   width: 18px;
-  background: rgba(0, 195, 0, 0.55);
+  background: rgba(0, 140, 255, 0.55);
 }
 
 .news-deco__tick--1 { top: 28%; left: 20%; transform: rotate(-30deg); }
@@ -1107,7 +1114,7 @@
   z-index: 0;
   pointer-events: none;
   background-image:
-    radial-gradient(ellipse 55% 60% at 4% 10%, rgba(0, 195, 0, 0.07) 0%, transparent 100%);
+    radial-gradient(ellipse 55% 60% at 4% 10%, rgba(0, 140, 255, 0.07) 0%, transparent 100%);
 }
 
 /* 装飾：右上に3重リング（繋ぎ目を避け内側に配置） */
@@ -1119,10 +1126,10 @@
   width: 420px;
   height: 420px;
   border-radius: 50%;
-  border: 1px solid rgba(0, 195, 0, 0.16);
+  border: 1px solid rgba(0, 140, 255, 0.16);
   box-shadow:
-    0 0 0 55px rgba(0, 195, 0, 0.05),
-    0 0 0 110px rgba(0, 195, 0, 0.025);
+    0 0 0 55px rgba(0, 140, 255, 0.05),
+    0 0 0 110px rgba(0, 140, 255, 0.025);
   pointer-events: none;
   z-index: 0;
 }
@@ -1295,7 +1302,7 @@
   background-image:
     radial-gradient(
       ellipse 65% 50% at 90% 12%,
-      rgba(0, 195, 0, 0.06) 0%,
+      rgba(0, 140, 255, 0.06) 0%,
       transparent 100%
     );
 }
@@ -1310,8 +1317,8 @@
   height: 560px;
   transform: translateY(-50%);
   border-radius: 50%;
-  border: 1px solid rgba(0, 195, 0, 0.14);
-  box-shadow: 0 0 0 72px rgba(0, 195, 0, 0.04);
+  border: 1px solid rgba(0, 140, 255, 0.14);
+  box-shadow: 0 0 0 72px rgba(0, 140, 255, 0.04);
   pointer-events: none;
   z-index: 0;
 }
@@ -1476,7 +1483,7 @@
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 55% 50% at 88% 18%, rgba(0,195,0,0.10) 0%, transparent 100%),
+    radial-gradient(ellipse 55% 50% at 88% 18%, rgba(0,140,255,0.10) 0%, transparent 100%),
     radial-gradient(ellipse 40% 55% at 12% 82%, rgba(0,120,255,0.05) 0%, transparent 100%);
 }
 .svc-section::after {
@@ -1485,8 +1492,8 @@
   top: -100px; right: -100px;
   width: 520px; height: 520px;
   border-radius: 50%;
-  border: 1px solid rgba(0,195,0,0.10);
-  box-shadow: 0 0 0 90px rgba(0,195,0,0.04), 0 0 0 180px rgba(0,195,0,0.02);
+  border: 1px solid rgba(0,140,255,0.10);
+  box-shadow: 0 0 0 90px rgba(0,140,255,0.04), 0 0 0 180px rgba(0,140,255,0.02);
   pointer-events: none;
   z-index: 0;
 }
@@ -1494,7 +1501,7 @@
 /* ── Works: グロー追加 ── */
 #works::before {
   background-image:
-    radial-gradient(ellipse 50% 45% at 92% 8%, rgba(0,195,0,0.05) 0%, transparent 100%);
+    radial-gradient(ellipse 50% 45% at 92% 8%, rgba(0,140,255,0.05) 0%, transparent 100%);
 }
 /* ── Works: ライト背景向けテキスト色 ── */
 #works { color: var(--color-text); }
@@ -1513,8 +1520,8 @@
   background-image: none;
 }
 .company-section::after {
-  border-color: rgba(0,195,0,0.14);
-  box-shadow: 0 0 0 55px rgba(0,195,0,0.03), 0 0 0 110px rgba(0,195,0,0.015);
+  border-color: rgba(0,140,255,0.14);
+  box-shadow: 0 0 0 55px rgba(0,140,255,0.03), 0 0 0 110px rgba(0,140,255,0.015);
 }
 .company-deco__hline--2 {
   background: linear-gradient(to left,
@@ -1551,8 +1558,8 @@
     radial-gradient(ellipse 40% 55% at 6% 88%, rgba(0,100,255,0.03) 0%, transparent 100%);
 }
 .news-section::after {
-  border-color: rgba(0,195,0,0.14);
-  box-shadow: 0 0 0 72px rgba(0,195,0,0.03);
+  border-color: rgba(0,140,255,0.14);
+  box-shadow: 0 0 0 72px rgba(0,140,255,0.03);
 }
 /* ニュース見出しテキスト（ライト背景対応） */
 .news-section .section-title,
@@ -1847,7 +1854,7 @@
 }
 
 .highlight-marker {
-  background-image: linear-gradient(#009a00, #009a00);
+  background-image: linear-gradient(#008cff, #008cff);
   background-size: 0% 88%;
   background-position: left center;
   background-repeat: no-repeat;
@@ -2403,7 +2410,7 @@ body.is-loaded .page-shell {
     radial-gradient(circle at 50% 50%, transparent 0.8px, var(--gd-bg) 0 4px, transparent 4px),
     radial-gradient(circle at 50% 50%, #f00, transparent 60%),
     radial-gradient(circle at 50% 50%, #ff0, transparent 60%),
-    radial-gradient(circle at 50% 50%, #0f0, transparent 60%),
+    radial-gradient(circle at 50% 50%, #008cff, transparent 60%),
     radial-gradient(ellipse at 50% 50%, #00f, transparent 60%);
   background-size:
     5px 8.66px,
@@ -2511,7 +2518,7 @@ body.is-loaded .page-shell {
   padding: clamp(72px, 10vw, 120px) 0;
   position: relative;
   overflow: hidden;
-  border-top: 1px solid rgba(0, 195, 0, 0.08);
+  border-top: 1px solid rgba(0, 140, 255, 0.08);
 }
 
 /* Seamless transition when SNS follows split-cta */
@@ -2527,8 +2534,8 @@ body.is-loaded .page-shell {
   inset: 0;
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.78) 100%),
-    linear-gradient(rgba(0, 195, 0, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 195, 0, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(0, 140, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 140, 255, 0.03) 1px, transparent 1px);
   background-size: auto, 64px 64px, 64px 64px;
   pointer-events: none;
 }
@@ -2576,7 +2583,7 @@ body.is-loaded .page-shell {
 
 .sns-flip-link:hover {
   color: var(--color-accent);
-  border-color: rgba(0, 195, 0, 0.25);
+  border-color: rgba(0, 140, 255, 0.25);
 }
 
 /* 表・裏の文字レイヤー */
@@ -2642,4 +2649,27 @@ body.is-loaded .page-shell {
   .sns-flip-link:nth-child(-n+2) { border-top: none; }
   .sns-flip-link:first-child { border-top: 1px solid rgba(255, 255, 255, 0.08); }
   .sns-flip-link:nth-child(odd) { border-right: none; }
+}
+
+/* トップページのみ: CTAグリーン背景を青ネオンに上書き */
+.split-cta-item-green {
+  background: #008cff;
+}
+
+/* トップページのみ: ボタンglow・スクロールトップボタンを青ネオンに上書き */
+.btn-primary {
+  box-shadow: 0 4px 20px rgba(0, 140, 255, 0.28);
+}
+
+.btn-primary:hover {
+  background: #33a8ff;
+  box-shadow: 0 8px 32px rgba(0, 140, 255, 0.4);
+}
+
+.scroll-top-btn {
+  box-shadow: 0 4px 20px rgba(0, 140, 255, 0.35);
+}
+
+.scroll-top-btn:hover {
+  box-shadow: 0 6px 24px rgba(0, 140, 255, 0.45);
 }
