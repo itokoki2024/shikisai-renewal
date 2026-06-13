@@ -1619,101 +1619,97 @@
   background-image:
     radial-gradient(ellipse 50% 45% at 92% 8%, rgba(0,140,255,0.05) 0%, transparent 100%);
 }
-/* ── Works: ライト背景向けテキスト色 ── */
-#works { color: var(--color-text); }
-#works .section-title { color: var(--color-text); }
+/* ── Works: ダーク背景テキスト色（top-band 暗色化に合わせ） ── */
+#works { color: var(--color-white); }
+#works .section-title { color: var(--color-white); }
 #works .section-description,
-#works .section-description-white { color: var(--color-text-soft); }
-#works .section-heading-hero--dark::before { color: rgba(16, 19, 23, 0.05); }
+#works .section-description-white { color: rgba(255, 255, 255, 0.75); }
+#works .section-heading-hero--dark::before { color: rgba(255, 255, 255, 0.05); }
 
-/* ── Company: ライト背景に変更 ── */
+/* ── Company: ダーク背景に統一 ── */
 .company-section {
   position: relative;
-  background: #F4F5F7;
-  color: var(--color-text);
+  background: transparent;
+  color: var(--color-white);
 }
-.company-section::before {
-  background-image: none;
-}
+.company-section::before { background-image: none; }
 .company-section::after {
   border-color: rgba(0,140,255,0.14);
   box-shadow: 0 0 0 55px rgba(0,140,255,0.03), 0 0 0 110px rgba(0,140,255,0.015);
 }
 .company-deco__hline--2 {
   background: linear-gradient(to left,
-    rgba(16,19,23,0.10) 0%,
-    rgba(16,19,23,0.04) 50%,
+    rgba(255,255,255,0.08) 0%,
+    rgba(255,255,255,0.03) 50%,
     transparent 100%);
 }
-/* セクション見出し（ライト背景対応） */
 .company-section .section-title,
 .company-section .section-description,
-.company-section .section-label { color: var(--color-text); }
+.company-section .section-label { color: var(--color-white); }
 .company-section .section-heading-hero__front { color: var(--color-accent); }
 
-/* Companyカード: ライト版 */
+/* Companyカード: ダーク版 */
 .company-block {
-  background: #ffffff;
+  background: #0f1318;
   border-top: 2px solid var(--color-accent);
   border-right: none;
   border-bottom: none;
   border-left: none;
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
 }
-.company-block-title { color: var(--color-text); }
-.company-block-text { color: var(--color-text-soft); }
+.company-block-title { color: var(--color-white); }
+.company-block-text { color: rgba(255, 255, 255, 0.68); }
 
-/* ── News: ライト背景に変更 ── */
+/* ── News: ダーク背景に統一 ── */
 .news-section {
   position: relative;
-  background: #F4F5F7;
-  color: var(--color-text);
+  background: transparent;
+  color: var(--color-white);
 }
 .news-section::before {
   background-image:
-    radial-gradient(ellipse 40% 55% at 6% 88%, rgba(0,100,255,0.03) 0%, transparent 100%);
+    radial-gradient(ellipse 40% 55% at 6% 88%, rgba(0,100,255,0.05) 0%, transparent 100%);
 }
 .news-section::after {
   border-color: rgba(0,140,255,0.14);
   box-shadow: 0 0 0 72px rgba(0,140,255,0.03);
 }
-/* ニュース見出しテキスト（ライト背景対応） */
 .news-section .section-title,
 .news-section .section-description,
-.news-section .section-label { color: var(--color-text); }
+.news-section .section-label { color: var(--color-white); }
 .news-section .section-heading-hero__front { color: var(--color-accent); }
 .news-section .section-heading-hero--dark .section-heading-hero__front { color: var(--color-accent); }
 
-/* Newsカード: ライト版 */
+/* Newsカード: ダーク版 */
 .news-card {
-  background: #ffffff;
-  border-top: 1px solid rgba(16, 19, 23, 0.12);
-  border-bottom: 1px solid rgba(16, 19, 23, 0.12);
+  background: #0f1318;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 .news-card:hover {
-  background: #ffffff;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+  background: #1a1f25;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
 }
-.news-card__title { color: var(--color-text); }
-.news-card__text { color: var(--color-text-soft); }
-.news-card__date { color: rgba(16, 19, 23, 0.48); }
+.news-card__title { color: var(--color-white); }
+.news-card__text { color: rgba(255, 255, 255, 0.68); }
+.news-card__date { color: rgba(255, 255, 255, 0.40); }
 .news-card__category--blog {
-  background: rgba(16, 19, 23, 0.08);
-  color: var(--color-text);
+  background: rgba(0, 140, 255, 0.15);
+  color: rgba(255, 255, 255, 0.85);
 }
 .news-card__arrow {
-  background: rgba(16, 19, 23, 0.06);
-  color: var(--color-text);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-white);
 }
-/* アウトラインボタン（ライト背景対応） */
+/* アウトラインボタン（ダーク背景対応） */
 .btn-outline-dark {
-  color: var(--color-text);
-  border-color: rgba(16, 19, 23, 0.28);
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.28);
 }
 .btn-outline-dark:hover {
-  background: rgba(16, 19, 23, 0.06);
-  border-color: rgba(16, 19, 23, 0.42);
-  color: var(--color-text);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.45);
+  color: var(--color-white);
 }
 /* =========================
    Corner brackets — 全セクション非表示
@@ -1731,7 +1727,7 @@
 .top-band {
   position: relative;
   overflow: hidden;
-  background: #F4F5F7;
+  background: #05080b;
 }
 
 /* 内部セクションを透明にしてバンド背景と装飾を透かす */

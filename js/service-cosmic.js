@@ -1,11 +1,11 @@
 (function () {
   'use strict';
 
-  function genShadows(count) {
+  function genShadows(count, maxX, maxY) {
     var parts = [];
     for (var i = 0; i < count; i++) {
-      var x = Math.floor(Math.random() * 2000);
-      var y = Math.floor(Math.random() * 2000);
+      var x = Math.floor(Math.random() * maxX);
+      var y = Math.floor(Math.random() * maxY);
       parts.push(x + 'px ' + y + 'px #FFF');
     }
     return parts.join(', ');
@@ -17,9 +17,14 @@
     var starsLgEl = document.querySelector('.svc-cosmic-bg .cosmic-stars-large');
     if (!starsEl) return;
 
-    var sm = genShadows(700);
-    var md = genShadows(200);
-    var lg = genShadows(100);
+    // コンテナの実際の幅を使って星を均等に分布させる
+    var bg = document.querySelector('.svc-cosmic-bg');
+    var maxX = Math.max(bg ? bg.offsetWidth : 0, window.innerWidth || 1400, 2000);
+    var maxY = 2000;
+
+    var sm = genShadows(700, maxX, maxY);
+    var md = genShadows(200, maxX, maxY);
+    var lg = genShadows(100, maxX, maxY);
 
     // 要素自体の box-shadow（星の位置）
     starsEl.style.boxShadow   = sm;
