@@ -2303,13 +2303,7 @@ body.is-loaded .page-shell {
   }
 
   .stat-card-icon {
-    width: 48px;
-    height: 48px;
-  }
-
-  .stat-card-icon svg {
-    width: 22px;
-    height: 22px;
+    display: none;
   }
 
   .stat-card-label {

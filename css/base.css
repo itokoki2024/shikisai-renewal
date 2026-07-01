@@ -1072,3 +1072,13 @@ section {
     font-size: 14px;
   }
 }
+
+.sp-only {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .sp-only {
+    display: inline;
+  }
+}

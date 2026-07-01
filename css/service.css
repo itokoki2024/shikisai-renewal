@@ -2239,9 +2239,6 @@
 .svc-step__num {
   width: 56px;
   height: 56px;
-  border-radius: 50%;
-  background: var(--color-card);
-  border: 1.5px solid rgba(var(--color-accent-rgb), 0.35);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2252,14 +2249,13 @@
   letter-spacing: -0.02em;
   position: relative;
   z-index: 1;
-  transition: background 0.3s ease, border-color 0.3s ease;
+  transition: color 0.3s ease;
   flex-shrink: 0;
   margin-bottom: 0;
 }
 
 .svc-step:hover .svc-step__num {
-  background: rgba(var(--color-accent-rgb), 0.12);
-  border-color: var(--color-accent);
+  color: var(--color-white);
 }
 
 .svc-step__body {
@@ -2274,6 +2270,7 @@
   font-weight: 700;
   color: var(--color-white);
   letter-spacing: -0.01em;
+  line-height: 56px;
   white-space: nowrap;
   flex-shrink: 0;
   width: 6em;
@@ -2544,6 +2541,7 @@ details[open] .svc-faq-item__icon svg {
 
   .svc-step { gap: 14px; }
   .svc-step__num { width: 44px; height: 44px; font-size: 17px; }
+  .svc-step__title { line-height: 44px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
