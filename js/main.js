@@ -61,7 +61,7 @@
     "position:fixed", "top:0", "left:0", "height:2px", "z-index:200",
     "pointer-events:none", "transform-origin:left center",
     "transform:scaleX(0)", "will-change:transform",
-    "background:linear-gradient(to right,#00c300,#17d917)",
+    "background:linear-gradient(to right,#008cff,#33a3ff)",
     "width:100%",
   ].join(";");
   document.body.appendChild(bar);
@@ -204,6 +204,8 @@ const countItems = document.querySelectorAll(".js-count");
 
 function animateCount(el) {
   const target = Number(el.dataset.count || 0);
+  const decimals = (el.dataset.count || "0").includes(".") ? 1 : 0;
+  const step = decimals ? 0.1 : 1;
   const duration = 1400;
   const startTime = performance.now();
 
@@ -211,14 +213,19 @@ function animateCount(el) {
     const elapsed = now - startTime;
     const progress = Math.min(elapsed / duration, 1);
     const eased = 1 - Math.pow(1 - progress, 3);
-    const current = Math.floor(target * eased);
+    const raw = target * eased;
+    const current = decimals
+      ? Math.floor(raw / step) * step
+      : Math.floor(raw);
 
-    el.textContent = current.toLocaleString();
+    el.textContent = decimals
+      ? current.toFixed(1)
+      : current.toLocaleString();
 
     if (progress < 1) {
       requestAnimationFrame(update);
     } else {
-      el.textContent = target.toLocaleString();
+      el.textContent = decimals ? target.toFixed(1) : target.toLocaleString();
     }
   }
 
@@ -271,92 +278,6 @@ anchorLinks.forEach((link) => {
   });
 });
 
-/* =========================
-   About Scroll Scene
-========================= */
-(() => {
-  const section = document.querySelector(".about-scene");
-  if (!section) return;
-
-  const stage   = section.querySelector(".about-scene__stage");
-  const logo    = section.querySelector(".about-scene__logo");
-  const bg      = section.querySelector(".about-scene__bg");
-  const shade   = section.querySelector(".about-scene__shade");
-  const copy    = section.querySelector(".about-scene__copy");
-  const marquee = document.querySelector(".lead-section .marquee");
-
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  const mobileMq     = window.matchMedia("(max-width: 767px)");
-
-  const clamp       = (v, lo, hi) => Math.min(Math.max(v, lo), hi);
-  const easeOut     = (t) => 1 - Math.pow(1 - t, 3);
-  const easeInOut   = (t) => t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t+2, 3)/2;
-
-  const applyState = () => {
-    const rect     = stage.getBoundingClientRect();
-    const distance = Math.max(stage.offsetHeight - window.innerHeight, 1);
-    const progress = clamp(-rect.top / distance, 0, 1);
-
-
-    if (reduceMotion.matches) {
-      logo.style.opacity   = progress > 0.35 ? "0" : "1";
-      logo.style.transform = "scale(1)";
-      bg.style.opacity     = progress > 0.35 ? "1" : "0";
-      bg.style.transform   = "scale(1)";
-      shade.style.opacity  = "1";
-      copy.style.opacity   = progress > 0.50 ? "1" : "0";
-      copy.style.transform = "translateY(0)";
-      return;
-    }
-
-    const isMobile     = mobileMq.matches;
-    const logoScaleMax = isMobile ? 2.8 : 4.8;
-    const bgScaleStart = isMobile ? 1.22 : 1.34;
-
-    // シェード: 最初から表示
-    shade.style.opacity = "1";
-
-    // ① ロゴ ズーム: 0 → 0.45
-    const zoomP = clamp(progress / 0.45, 0, 1);
-    const scale = 1 + (logoScaleMax - 1) * easeOut(zoomP);
-
-    // ② ロゴ フェードアウト: 0.45 → 0.72
-    const fadeP  = clamp((progress - 0.45) / 0.27, 0, 1);
-    const logoOp = Math.max(1 - easeInOut(fadeP), 0);
-
-    // ③ 背景画像: 0.45 → 0.88
-    const bgP  = clamp((progress - 0.45) / 0.43, 0, 1);
-    const bgOp = easeOut(bgP);
-    const bgSc = bgScaleStart + (1.0 - bgScaleStart) * easeOut(bgP);
-
-    // ④ コピーテキスト: 0.70 → 1.0（ステージ終了 = コピー完了）
-    const copyP  = clamp((progress - 0.70) / 0.30, 0, 1);
-    const copyOp = easeOut(copyP);
-    const copyTy = (isMobile ? 32 : 44) * (1 - easeOut(copyP));
-
-    logo.style.transform = `scale(${scale})`;
-    logo.style.opacity   = logoOp.toFixed(3);
-
-    bg.style.transform = `scale(${bgSc})`;
-    bg.style.opacity   = bgOp.toFixed(3);
-
-    copy.style.transform = `translateY(${copyTy}px)`;
-    copy.style.opacity   = copyOp.toFixed(3);
-  };
-
-  let ticking = false;
-  const requestTick = () => {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(() => { applyState(); ticking = false; });
-  };
-
-  applyState();
-  window.addEventListener("scroll", requestTick, { passive: true });
-  window.addEventListener("resize", requestTick);
-  if (mobileMq.addEventListener)     mobileMq.addEventListener("change", requestTick);
-  if (reduceMotion.addEventListener) reduceMotion.addEventListener("change", requestTick);
-})();
 
 window.addEventListener("load", () => {
   const body = document.body;

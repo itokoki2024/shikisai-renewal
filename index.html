@@ -8,7 +8,9 @@
       name="description"
       content="SHiKiSAiは名古屋発の採用支援コンサルティング会社です。無料媒体運用・企業分析・ブランディング・SNS運用など、採用に必要なすべてをワンストップで支援します。"
     />
-    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="株式会社SHiKiSAi" />
     <meta property="og:title" content="SHiKiSAi | 採用支援コンサルティング" />
@@ -26,17 +28,44 @@
     />
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/top.css" />
+    <script>if(sessionStorage.getItem("shikisai-visited")){document.documentElement.classList.add("skip-loader");}</script>
   </head>
 
   <body class="is-loading">
     <div class="site-loader" id="siteLoader" aria-hidden="true">
-      <canvas id="loader-canvas" class="site-loader__canvas"></canvas>
+      <!-- 3パネルマスク（退場時にfillが右へスライド） -->
+      <div class="site-loader__mask">
+        <div class="site-loader__mask-panel site-loader__mask-panel--top">
+          <div class="site-loader__mask-fill"></div>
+        </div>
+        <div class="site-loader__mask-panel site-loader__mask-panel--middle">
+          <div class="site-loader__mask-fill"></div>
+        </div>
+        <div class="site-loader__mask-panel site-loader__mask-panel--bottom">
+          <div class="site-loader__mask-fill"></div>
+        </div>
+      </div>
+      <!-- 中央：リング＋ロゴ＋パーセント -->
+      <div class="site-loader__stage">
+        <div class="site-loader__body">
+          <div class="site-loader__ring-wrap">
+            <svg class="site-loader__ring" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+              <circle class="site-loader__ring-track" cx="100" cy="100" r="88"/>
+              <circle class="site-loader__ring-progress" cx="100" cy="100" r="88"/>
+            </svg>
+            <div class="site-loader__logo">
+              <img src="assets/img/logo.png" alt="SHiKiSAi"/>
+            </div>
+          </div>
+          <p class="site-loader__percent" id="loaderPercent">0%</p>
+        </div>
+      </div>
     </div>
 
     <div class="page-shell">
       <header class="site-header" id="siteHeader">
         <div class="container header-inner">
-          <a href="#top" class="site-logo" aria-label="SHiKiSAi トップへ">
+          <a href="index.html" class="site-logo" aria-label="SHiKiSAi トップへ">
             <img
               src="assets/img/logo.png"
               alt="SHiKiSAi ロゴ"
@@ -47,6 +76,7 @@
 
           <nav class="pc-nav" aria-label="グローバルナビゲーション">
             <ul class="pc-nav-list">
+              <li><a href="index.html" class="is-current">Top</a></li>
               <li><a href="news.html">News</a></li>
               <li><a href="about.html">About</a></li>
               <li><a href="service.html">Service</a></li>
@@ -149,13 +179,7 @@
               <div class="about-scene__base" aria-hidden="true"></div>
               <div class="about-scene__bg" aria-hidden="true"></div>
               <div class="about-scene__shade" aria-hidden="true"></div>
-              <div class="about-scene__logo-wrap" aria-hidden="true">
-                <img
-                  src="assets/img/about-logo-symbol.png"
-                  alt=""
-                  class="about-scene__logo about-scene__logo--symbol"
-                />
-              </div>
+
               <div class="container about-scene__content">
                 <div
                   class="section-heading section-heading-hero about-scene__copy"
@@ -243,9 +267,6 @@ SERVICE — Card grid
                 <div class="svc-card__body">
                   <span class="svc-card__num">01</span>
                   <h3 class="svc-card__title">無料媒体運用</h3>
-                  <p class="svc-card__text">
-                    低コストで応募導線を整え、採用活動スピードを上げます。
-                  </p>
                 </div>
               </article>
 
@@ -261,9 +282,6 @@ SERVICE — Card grid
                 <div class="svc-card__body">
                   <span class="svc-card__num">02</span>
                   <h3 class="svc-card__title">企業分析</h3>
-                  <p class="svc-card__text">
-                    採用課題や魅力を整理し、伝えるべきポイントを明確にします。
-                  </p>
                 </div>
               </article>
 
@@ -279,9 +297,6 @@ SERVICE — Card grid
                 <div class="svc-card__body">
                   <span class="svc-card__num">03</span>
                   <h3 class="svc-card__title">企業ブランディング</h3>
-                  <p class="svc-card__text">
-                    魅力を言語化・視覚化し、採用広報に一貫性を持たせます。
-                  </p>
                 </div>
               </article>
 
@@ -297,9 +312,6 @@ SERVICE — Card grid
                 <div class="svc-card__body">
                   <span class="svc-card__num">04</span>
                   <h3 class="svc-card__title">中途・新卒媒体</h3>
-                  <p class="svc-card__text">
-                    媒体選定と運用で、応募の質と量を最適化します。
-                  </p>
                 </div>
               </article>
 
@@ -315,9 +327,6 @@ SERVICE — Card grid
                 <div class="svc-card__body">
                   <span class="svc-card__num">05</span>
                   <h3 class="svc-card__title">SNS運用代行</h3>
-                  <p class="svc-card__text">
-                    企業の空気感や働く人の魅力が伝わる発信設計・運用を行います。
-                  </p>
                 </div>
               </article>
 
@@ -333,9 +342,6 @@ SERVICE — Card grid
                 <div class="svc-card__body">
                   <span class="svc-card__num">06</span>
                   <h3 class="svc-card__title">制作物各種</h3>
-                  <p class="svc-card__text">
-                    活動に必要な制作物を一貫して支援します。
-                  </p>
                 </div>
               </article>
             </div>
@@ -409,71 +415,58 @@ SERVICE — Card grid
           <section class="works-slider" aria-label="works visual slider">
           <div class="works-slider__track">
             <figure class="works-slider__item">
-              <img
-                src="assets/img/bridge-01.png"
-                alt="打ち合わせ風景"
-                loading="eager"
-                fetchpriority="high"
-              />
+              <img src="assets/img/office1.png" alt="オフィス風景" loading="eager" fetchpriority="high" />
             </figure>
             <figure class="works-slider__item">
-              <img
-                src="assets/img/bridge-02.png"
-                alt="仕事風景"
-                loading="eager"
-                fetchpriority="high"
-              />
+              <img src="assets/img/office2.png" alt="オフィス風景" loading="eager" fetchpriority="high" />
             </figure>
             <figure class="works-slider__item">
-              <img
-                src="assets/img/bridge-03.png"
-                alt="面談風景"
-                loading="eager"
-              />
+              <img src="assets/img/office4.png" alt="オフィス風景" loading="eager" />
             </figure>
             <figure class="works-slider__item">
-              <img
-                src="assets/img/bridge-04.png"
-                alt="スタッフ風景"
-                loading="eager"
-              />
+              <img src="assets/img/office5.png" alt="オフィス風景" loading="eager" />
             </figure>
             <figure class="works-slider__item">
-              <img
-                src="assets/img/bridge-05.png"
-                alt="オフィス風景"
-                loading="eager"
-              />
+              <img src="assets/img/office6.png" alt="オフィス風景" loading="eager" />
+            </figure>
+            <figure class="works-slider__item">
+              <img src="assets/img/office8.png" alt="オフィス風景" loading="eager" />
+            </figure>
+            <figure class="works-slider__item">
+              <img src="assets/img/office10.png" alt="オフィス風景" loading="eager" />
+            </figure>
+            <figure class="works-slider__item">
+              <img src="assets/img/office11.png" alt="オフィス風景" loading="eager" />
+            </figure>
+            <figure class="works-slider__item">
+              <img src="assets/img/office12.png" alt="オフィス風景" loading="eager" />
             </figure>
             <figure class="works-slider__item" aria-hidden="true">
-              <img src="assets/img/bridge-01.png" alt="" loading="eager" />
+              <img src="assets/img/office1.png" alt="" loading="eager" />
             </figure>
             <figure class="works-slider__item" aria-hidden="true">
-              <img src="assets/img/bridge-02.png" alt="" loading="eager" />
+              <img src="assets/img/office2.png" alt="" loading="eager" />
             </figure>
             <figure class="works-slider__item" aria-hidden="true">
-              <img src="assets/img/bridge-03.png" alt="" loading="eager" />
+              <img src="assets/img/office4.png" alt="" loading="eager" />
             </figure>
             <figure class="works-slider__item" aria-hidden="true">
-              <img src="assets/img/bridge-04.png" alt="" loading="eager" />
+              <img src="assets/img/office5.png" alt="" loading="eager" />
             </figure>
             <figure class="works-slider__item" aria-hidden="true">
-              <img src="assets/img/bridge-05.png" alt="" loading="eager" />
+              <img src="assets/img/office6.png" alt="" loading="eager" />
             </figure>
             <figure class="works-slider__item" aria-hidden="true">
-              <img src="assets/img/bridge-01.png" alt="" loading="eager" />
+              <img src="assets/img/office8.png" alt="" loading="eager" />
             </figure>
             <figure class="works-slider__item" aria-hidden="true">
-              <img src="assets/img/bridge-02.png" alt="" loading="eager" />
+              <img src="assets/img/office10.png" alt="" loading="eager" />
             </figure>
             <figure class="works-slider__item" aria-hidden="true">
-              <img src="assets/img/bridge-03.png" alt="" loading="eager" />
+              <img src="assets/img/office11.png" alt="" loading="eager" />
             </figure>
             <figure class="works-slider__item" aria-hidden="true">
-              <img src="assets/img/bridge-04.png" alt="" loading="eager" />
-            </figure>
-            <figure class="works-slider__item" aria-hidden="true">
-              <img src="assets/img/bridge-05.png" alt="" loading="eager" />
+              <img src="assets/img/office12.png" alt="" loading="eager" />
             </figure>
           </div>
         </section>
@@ -486,9 +479,6 @@ SERVICE — Card grid
             >
               <p class="section-heading-hero__front">WORKS</p>
               <h2 class="section-title">数字と事例で価値を伝える</h2>
-              <p class="section-description section-description-white">
-                ここにはあとで実際の数字や導入事例を入れていきます。今はサンプル値を置いています。
-              </p>
             </div>
 
             <div class="stats-grid">
@@ -502,11 +492,11 @@ SERVICE — Card grid
                 </div>
                 <p class="stat-card-label">支援企業数</p>
                 <p class="stat-card-value">
-                  <span class="js-count" data-count="48">0</span
+                  <span class="js-count" data-count="150">0</span
                   ><small>社</small>
                 </p>
                 <p class="stat-card-text">
-                  採用体制づくりから実務改善まで幅広く支援。
+                  採用体制の構築から媒体運用・ブランディングまで、幅広い業種・規模の企業を支援してきました。
                 </p>
               </article>
               <article class="stat-card js-reveal">
@@ -520,13 +510,13 @@ SERVICE — Card grid
                     />
                   </svg>
                 </div>
-                <p class="stat-card-label">継続支援率</p>
+                <p class="stat-card-label">継続率</p>
                 <p class="stat-card-value">
-                  <span class="js-count" data-count="92">0</span
-                  ><small>%</small>
+                  <span class="js-count" data-count="90">0</span
+                  ><small>%以上</small>
                 </p>
                 <p class="stat-card-text">
-                  単発ではなく、伴走型支援につながるケースが中心。
+                  一度の支援で終わらず、継続的な伴走型サポートへとつながるケースが全体の9割以上を占めます。
                 </p>
               </article>
               <article class="stat-card js-reveal">
@@ -536,13 +526,13 @@ SERVICE — Card grid
                     <path d="M12 8V12L15 14" />
                   </svg>
                 </div>
-                <p class="stat-card-label">平均改善期間</p>
+                <p class="stat-card-label">応募平均</p>
                 <p class="stat-card-value">
-                  <span class="js-count" data-count="3">0</span
-                  ><small>ヶ月</small>
+                  <span class="js-count" data-count="25">0</span
+                  ><small>応募</small>
                 </p>
                 <p class="stat-card-text">
-                  採用導線や選考プロセスを短期間で見直し。
+                  媒体設計と継続的な運用改善により、月平均25件以上の安定した応募数を確保しています。
                 </p>
               </article>
               <article class="stat-card js-reveal">
@@ -552,13 +542,13 @@ SERVICE — Card grid
                     <path d="M20 20L16 16" />
                   </svg>
                 </div>
-                <p class="stat-card-label">企業分析実施数</p>
+                <p class="stat-card-label">採用成功率</p>
                 <p class="stat-card-value">
-                  <span class="js-count" data-count="76">0</span
-                  ><small>社</small>
+                  <span class="js-count" data-count="95">0</span
+                  ><small>%</small>
                 </p>
                 <p class="stat-card-text">
-                  採用市場での立ち位置を整理し、改善方針を可視化。
+                  採用要件の整理から選考設計まで一貫して支援し、ミスマッチのない人材獲得を実現しています。
                 </p>
               </article>
               <article class="stat-card js-reveal">
@@ -573,13 +563,13 @@ SERVICE — Card grid
                     />
                   </svg>
                 </div>
-                <p class="stat-card-label">SNS運用支援数</p>
+                <p class="stat-card-label">月間最大応募</p>
                 <p class="stat-card-value">
-                  <span class="js-count" data-count="31">0</span
-                  ><small>社</small>
+                  <span class="js-count" data-count="300">0</span
+                  ><small>件</small>
                 </p>
                 <p class="stat-card-text">
-                  会社の魅力発信を支えるSNS運用をサポート。
+                  採用ブランディングと媒体最適化により、月間300件を超える応募獲得を達成した実績があります。
                 </p>
               </article>
               <article class="stat-card js-reveal">
@@ -591,13 +581,13 @@ SERVICE — Card grid
                     <path d="M10 12H14" />
                   </svg>
                 </div>
-                <p class="stat-card-label">制作支援実績</p>
+                <p class="stat-card-label">平均応募増加率</p>
                 <p class="stat-card-value">
-                  <span class="js-count" data-count="58">0</span
-                  ><small>件</small>
+                  <span class="js-count" data-count="2.5">0</span
+                  ><small>倍</small>
                 </p>
                 <p class="stat-card-text">
-                  HP・LP・パンフレットなどの採用制作物を支援。
+                  支援開始前の実績と比較して、応募数が平均2.5倍以上に増加した企業が多数あります。
                 </p>
               </article>
             </div>
@@ -705,9 +695,9 @@ SERVICE — Card grid
             </div>
 
             <div class="news-list">
-              <a href="news.html" class="news-card">
+              <a href="news-single.html" class="news-card">
                 <div class="news-card__meta">
-                  <span class="news-card__category">NEWS</span>
+                  <span class="news-card__category news-card__category--notice">お知らせ</span>
                   <time class="news-card__date" datetime="2026-05-03"
                     >2026.05.03</time
                   >
@@ -722,10 +712,10 @@ SERVICE — Card grid
                 </div>
                 <span class="news-card__arrow" aria-hidden="true">→</span>
               </a>
-              <a href="news.html" class="news-card">
+              <a href="news-single.html" class="news-card">
                 <div class="news-card__meta">
-                  <span class="news-card__category news-card__category--blog"
-                    >BLOG</span
+                  <span class="news-card__category news-card__category--column"
+                    >採用コラム</span
                   >
                   <time class="news-card__date" datetime="2026-04-20"
                     >2026.04.20</time
@@ -741,9 +731,9 @@ SERVICE — Card grid
                 </div>
                 <span class="news-card__arrow" aria-hidden="true">→</span>
               </a>
-              <a href="news.html" class="news-card">
+              <a href="news-single.html" class="news-card">
                 <div class="news-card__meta">
-                  <span class="news-card__category">NEWS</span>
+                  <span class="news-card__category news-card__category--notice">お知らせ</span>
                   <time class="news-card__date" datetime="2026-04-10"
                     >2026.04.10</time
                   >
@@ -758,10 +748,10 @@ SERVICE — Card grid
                 </div>
                 <span class="news-card__arrow" aria-hidden="true">→</span>
               </a>
-              <a href="news.html" class="news-card">
+              <a href="news-single.html" class="news-card">
                 <div class="news-card__meta">
-                  <span class="news-card__category news-card__category--blog"
-                    >BLOG</span
+                  <span class="news-card__category news-card__category--column"
+                    >採用コラム</span
                   >
                   <time class="news-card__date" datetime="2026-03-28"
                     >2026.03.28</time
@@ -868,22 +858,7 @@ SERVICE — Card grid
                 data-text="Instagram"
                 >Instagram</a
               >
-              <a
-                href="https://twitter.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="sns-flip-link"
-                data-text="X / Twitter"
-                >X / Twitter</a
-              >
-              <a
-                href="https://www.facebook.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="sns-flip-link"
-                data-text="Facebook"
-                >Facebook</a
-              >
+
             </nav>
           </div>
         </section>

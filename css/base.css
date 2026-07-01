@@ -10,9 +10,9 @@
   --color-border: rgba(255, 255, 255, 0.12);
   --color-border-dark: rgba(16, 19, 23, 0.1);
 
-  --color-accent: #00c300;
-  --color-accent-rgb: 0, 195, 0;
-  --color-accent-deep: #009a00;
+  --color-accent: #008cff;
+  --color-accent-rgb: 0, 140, 255;
+  --color-accent-deep: #0060cc;
 
   --color-card: #151a20;
   --color-light: #f7f8fa;
@@ -216,12 +216,12 @@ section {
 .btn-primary {
   color: var(--color-bg);
   background: var(--color-accent);
-  box-shadow: 0 4px 20px rgba(0, 195, 0, 0.28);
+  box-shadow: 0 4px 20px rgba(var(--color-accent-rgb), 0.28);
 }
 
 .btn-primary:hover {
-  background: #17d917;
-  box-shadow: 0 8px 32px rgba(0, 195, 0, 0.4);
+  background: #33a3ff;
+  box-shadow: 0 8px 32px rgba(var(--color-accent-rgb), 0.4);
 }
 
 .btn-secondary {
@@ -391,7 +391,7 @@ section {
   width: min(80vw, 320px);
   z-index: 9999;
   background: #0b0d10;
-  border-left: 1px solid rgba(0, 195, 0, 0.12);
+  border-left: 1px solid rgba(var(--color-accent-rgb), 0.12);
   transform: translateX(100%);
   visibility: hidden;
   transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.32s;
@@ -426,7 +426,7 @@ section {
     visibility 0.25s ease,
     transform 0.25s ease,
     background 0.2s ease;
-  box-shadow: 0 4px 20px rgba(0, 195, 0, 0.35);
+  box-shadow: 0 4px 20px rgba(var(--color-accent-rgb), 0.35);
 }
 
 .scroll-top-btn.is-visible {
@@ -437,7 +437,7 @@ section {
 
 .scroll-top-btn:hover {
   background: var(--color-accent-deep);
-  box-shadow: 0 6px 24px rgba(0, 195, 0, 0.45);
+  box-shadow: 0 6px 24px rgba(var(--color-accent-rgb), 0.45);
 }
 
 .scroll-top-btn svg {
@@ -961,7 +961,7 @@ section {
 }
 
 .split-cta-item-green {
-  background: #00c300;
+  background: var(--color-accent);
   color: #ffffff;
 }
 
